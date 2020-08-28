@@ -3,6 +3,34 @@
 * Redis(Remote Dictionary Server)는 kvp 구조의 비관계형 데이터를 관리하기 위한 인메모리 NoSQL 저장소다.
 * 데이터베이스나 캐시, 메시지 브로커로 사용할 수 있으며, 각종 데이터 타입을 지원한다.
 
+## Data Types
+
+### Strings
+
+* 문자열은 레디스 값의 가장 기본적인 타입이다.
+* INCR, APPEND 등 각종 동작이 가능하다.
+
+### Lists
+
+* 리스트는 문자열의 리스트다.
+* LPUSH, RPUSH 등의 동작이 가능하다.
+
+### Sets
+
+* 집합은 문자열의 순서없는 컬렉션이다.
+* SADD, SPOP, SMEMBERS 등의 동작이 가능하다.
+
+### Hashes
+
+* 해시는 문자열 필드와 문자열 값으로 이뤄진 맵이다.
+* 따라서 오브젝트를 표현하기에 가작 적합한 타입이다.
+* HSET, HMSET, HGETALL 등의 동작이 가능하다.
+
+### Sorted sets
+
+* 집합과 비슷하지만 점수로 정렬되는 순서있는 컬렉션이다.
+* ZADD, ZRANK 등의 동작이 가능하다.
+
 ## Commands
 
 ### SET
