@@ -12,6 +12,7 @@
 * [[trpl-managing-growing-projects-with-packages-crates-and-modules]]
 * [[trpl-common-collections]]
 * [[trpl-generic-types-traits-and-lifetimes]]
+* [[trpl-functional-language-features]]
 
 ## Notes
 
