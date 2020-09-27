@@ -13,6 +13,7 @@
 * [[trpl-common-collections]]
 * [[trpl-generic-types-traits-and-lifetimes]]
 * [[trpl-functional-language-features]]
+* [[trpl-smart-pointers]]
 
 ## Notes
 
