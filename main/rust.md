@@ -24,6 +24,7 @@
 * [[rust-error-handling]]
 * [[rust-oop]]
 * [[rust-module]]
+* [[rust-lifetime]]
 
 ## References
 
