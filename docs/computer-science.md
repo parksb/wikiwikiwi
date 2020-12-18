@@ -20,6 +20,7 @@
 * [[difference-between-127-0-0-1-and-0-0-0-0]]
 * [[llvm]]
 * [[abstract-syntax-tree]]
+* [[dynamic-language-vs-static-language]]
 
 ## How to
 
