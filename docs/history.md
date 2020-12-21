@@ -2,7 +2,7 @@
 
 * [[history-of-my-mobile-phones]]
 
-## Review
+## Year in Review
 
-* [[review-2019]]
-* [[review-2020]]
+* [[goodbye-2019]]
+* [[goodbye-2020]]
