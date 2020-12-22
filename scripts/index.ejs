@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title><%- document.title %></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#000000">
+
+  <meta property="og:title" content="Wikiwikiwi - <%- document.title %>">
+  <meta name="twitter:title" content="Wikiwikiwi - <%- document.title %>">
+
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <link rel="stylesheet" href="assets/bundle.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥝</text></svg>">
+
+  <style>
+    body { padding: 30px 50px; max-width: 900px; word-break: keep-all; line-height: 2; font-size: 16px; }
+    header { margin-bottom: 30px; }
+    footer { margin-top: 30px; }
+    h1, h2, h3, h4, h5, h6 { margin-bottom: 16px; font-weight: 600; line-height: 1.25  }
+    h1, h2 { padding-bottom: .3em; border-bottom: 1px solid #eaecef; }
+    img { box-sizing: initial; max-width: 100%; }
+    ol, ul { padding-left: 2em; }
+    ol ol, ol ul, ul ol, ul ul { margin: 0; }
+    a { color: #0366d6; text-decoration: none; }
+    a:hover { outline-width: 0; text-decoration: underline; }
+    small { font-size: 12px; color: #9f9f9f; font-weight: normal; }
+    h1 > code, h2 > code, li > code,  p > code { padding: .2em .4em; margin: 0; font-size: 90%; background-color: #f6f8fa; }
+    blockquote { margin: 0; padding: 0 1em; color: #6a737d; border-left: .25em solid #dfe2e5; }
+    hr { color: #fdfdfd; }
+    p { margin: 0; }
+  </style>
+</head>
+
+<body>
+  <header role="navigation">
+    <small><a href="/">🥝wikiwikiwi</a>/<a href="https://github.com/parksb/wikiwikiwi/blob/master/docs/<%- document.filename %>">📄<%- document.filename %></a></small>
+  </header>
+
+  <main>
+    <article><%- document.html %></article>
+  </main>
+
+  <footer>
+    <small>© 2020 <a href="https://parksb.github.io/">Park Seong-beom</a></small>
+  </footer>
+</body>
