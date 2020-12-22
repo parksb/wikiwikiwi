@@ -45,13 +45,15 @@ const TEMPLATE_FILE_PATH: Buffer = fs.readFileSync(path.join(__dirname, './index
 
     articleFiles.forEach((filename: string, index: number) => {
       const markdown = fs.readFileSync(`${MARKDOWN_DIRECTORY_PATH}/${filename}`).toString();
-      const html = md.render(markdown)
+      const html = md.render(markdown) // https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/createLink.html
         .replace(/\[\[(.+?)\]\]\{(.+?)\}/g, '<a href="$1.html">$2</a>')
         .replace(/\[\[(.+?)\]\]/g, '<a href="$1.html">$1</a>');
-      const document = { title: markdown.match(/^#\s.*/)[0].replace(/^#\s/, ''), filename, html };
+      const filenameWithoutExt = filename.replace('.md', '');
+      const title = markdown.match(/^#\s.*/)[0].replace(/^#\s/, '');
+      const document = { title, filename, filenameWithoutExt, html };
 
       fs.writeFileSync(
-        `${HTML_DIRECTORY_PATH}/${filename.replace('.md', '')}.html`,
+        `${HTML_DIRECTORY_PATH}/${filenameWithoutExt}.html`,
         ejs.render(String(TEMPLATE_FILE_PATH), { document }),
       );
 
