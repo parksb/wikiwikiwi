@@ -10,6 +10,7 @@ import * as mdTex from 'markdown-it-texmath';
 import * as mdAnchor from 'markdown-it-anchor';
 import * as mdTableOfContents from 'markdown-it-table-of-contents';
 import * as mdInlineComment from 'markdown-it-inline-comments';
+import * as mdCheckbox from 'markdown-it-task-checkbox';
 
 const MARKDOWN_DIRECTORY_PATH: string = path.join(__dirname, '../docs');
 const DIST_DIRECTORY_PATH: string = path.join(__dirname, '../build');
@@ -39,6 +40,9 @@ const SITEMAP_PATH = `${DIST_DIRECTORY_PATH}/sitemap.xml`;
     .use(mdAnchor)
     .use(mdTableOfContents, {
       includeLevel: [1, 2, 3],
+    })
+    .use(mdCheckbox, {
+      disabled: true,
     });
 
     const documentFiles: string[] = fs.readdirSync(MARKDOWN_DIRECTORY_PATH)
