@@ -1,11 +1,23 @@
 # Computer Science
 
-## Directories
+## Programming Languages
 
-* [[programming-languages]]
-* [[web-back-end]]
-* [[web-front-end]]
-* [[git]]
+### [[rust]]{Rust}
+
+### [[typescript]]{TypeScript}
+
+## Web Back-end
+
+* [[mysql]]
+* [[redis]]
+* [[ngrinder]]
+* [[generate-thumbnail-using-aws-lambda]]
+
+## Web Front-end
+
+* [[react-functional-component-and-class-component]]
+* [[react-hooks]]
+* [[svelte]]
 
 ## Books & Papers
 
@@ -21,6 +33,8 @@
 * [[llvm]]
 * [[abstract-syntax-tree]]
 * [[dynamic-language-vs-static-language]]
+* [[git-switch-and-restore]]
+* [[git-rebase-onto]]
 
 ## How to
 

@@ -1,4 +1,0 @@
-# Programming Languages
-
-* [[rust]]
-* [[typescript]]

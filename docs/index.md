@@ -1,12 +1,12 @@
 # Wikiwikiwi
 
-## [[computer-science]]
+## [[computer-science]]{Computer Science}
 
-## [[graphic-design]]
+## [[graphic-design]]{Graphic Design}
 
-## [[tools]]
+## [[tools]]{Tools}
 
-## [[etc]]
+## [[etc]]{Etc.}
 
-## [[history]]
+## [[history]]{History}
 
