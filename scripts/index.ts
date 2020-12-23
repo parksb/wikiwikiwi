@@ -12,8 +12,9 @@ import * as mdTableOfContents from 'markdown-it-table-of-contents';
 import * as mdInlineComment from 'markdown-it-inline-comments';
 
 const MARKDOWN_DIRECTORY_PATH: string = path.join(__dirname, '../docs');
-const HTML_DIRECTORY_PATH: string = path.join(__dirname, '../build');
+const DIST_DIRECTORY_PATH: string = path.join(__dirname, '../build');
 const TEMPLATE_FILE_PATH: Buffer = fs.readFileSync(path.join(__dirname, './index.ejs'));
+const SITEMAP_PATH = `${DIST_DIRECTORY_PATH}/sitemap.xml`;
 
 (() => {
   const md: MarkdownIt = new MarkdownIt({
@@ -40,23 +41,32 @@ const TEMPLATE_FILE_PATH: Buffer = fs.readFileSync(path.join(__dirname, './index
       includeLevel: [1, 2, 3],
     });
 
-    const articleFiles: string[] = fs.readdirSync(MARKDOWN_DIRECTORY_PATH)
+    const documentFiles: string[] = fs.readdirSync(MARKDOWN_DIRECTORY_PATH)
     .filter((file) => !file.startsWith('.') );
 
-    articleFiles.forEach((filename: string, index: number) => {
+    const documents = documentFiles.map((filename: string) => {
       const markdown = fs.readFileSync(`${MARKDOWN_DIRECTORY_PATH}/${filename}`).toString();
       const html = md.render(markdown) // https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/createLink.html
         .replace(/\[\[(.+?)\]\]\{(.+?)\}/g, '<a href="$1.html">$2</a>')
         .replace(/\[\[(.+?)\]\]/g, '<a href="$1.html">$1</a>');
       const filenameWithoutExt = filename.replace('.md', '');
       const title = markdown.match(/^#\s.*/)[0].replace(/^#\s/, '');
-      const document = { title, filename, filenameWithoutExt, html };
+      return { title, filename, filenameWithoutExt, html };
+    });
 
+    documents.forEach((document) => {
       fs.writeFileSync(
-        `${HTML_DIRECTORY_PATH}/${filenameWithoutExt}.html`,
+        `${DIST_DIRECTORY_PATH}/${document.filenameWithoutExt}.html`,
         ejs.render(String(TEMPLATE_FILE_PATH), { document }),
       );
-
-      console.log(`* ${index}: ${filename}`);
     });
+
+    const documentUrls = documents.map((document) => `<url><loc>https://wikiwikiwi.vercel.app/${document.filenameWithoutExt}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
+    const content = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url><loc>https://wikiwikiwi.vercel.app/</loc><changefreq>daily</changefreq><priority>1.00</priority></url>
+${documentUrls.join('\n')}
+</urlset>
+`;
+    fs.writeFileSync(SITEMAP_PATH, content);
 })();
