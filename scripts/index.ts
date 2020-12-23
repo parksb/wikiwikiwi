@@ -39,7 +39,7 @@ const SITEMAP_PATH = `${DIST_DIRECTORY_PATH}/sitemap.xml`;
     })
     .use(mdAnchor)
     .use(mdTableOfContents, {
-      includeLevel: [1, 2, 3],
+      includeLevel: [2, 3, 4],
     })
     .use(mdCheckbox, {
       disabled: true,
@@ -49,12 +49,13 @@ const SITEMAP_PATH = `${DIST_DIRECTORY_PATH}/sitemap.xml`;
     .filter((file) => !file.startsWith('.') );
 
     const documents = documentFiles.map((filename: string) => {
-      const markdown = fs.readFileSync(`${MARKDOWN_DIRECTORY_PATH}/${filename}`).toString();
+      const preContents = '[[toc]]\n\n';
+      const markdown = `${preContents}${fs.readFileSync(`${MARKDOWN_DIRECTORY_PATH}/${filename}`)}`;
       const html = md.render(markdown) // https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/createLink.html
         .replace(/\[\[(.+?)\]\]\{(.+?)\}/g, '<a href="$1.html">$2</a>')
         .replace(/\[\[(.+?)\]\]/g, '<a href="$1.html">$1</a>');
       const filenameWithoutExt = filename.replace('.md', '');
-      const title = markdown.match(/^#\s.*/)[0].replace(/^#\s/, '');
+      const title = markdown.match(/#\s.*/)[0].replace(/^#\s/, '');
       return { title, filename, filenameWithoutExt, html };
     });
 
