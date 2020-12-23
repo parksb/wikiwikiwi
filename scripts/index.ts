@@ -34,8 +34,10 @@ const SITEMAP_PATH = `${DIST_DIRECTORY_PATH}/sitemap.xml`;
     },
   }).use(mdFootnote)
     .use(mdInlineComment)
-    .use(mdTex.use(katex), {
+    .use(mdTex, {
+      engine: katex,
       delimiters: 'gitlab',
+      macros: { '\\RR': '\\mathbb{R}' },
     })
     .use(mdAnchor)
     .use(mdTableOfContents, {
