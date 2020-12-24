@@ -1,6 +1,6 @@
 # Unix Command line tools
 
-## BSD $\neq$ UNIX
+## BSD $`\neq`$ UNIX
 
 * 커맨드 라인 툴은 대부분 두가지 버전이 있다:
   * BSD 버전 (BSDs & MacOS)

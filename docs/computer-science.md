@@ -35,6 +35,8 @@
 * [[dynamic-language-vs-static-language]]
 * [[git-switch-and-restore]]
 * [[git-rebase-onto]]
+* [[unix-command-line-tools]]
+* [[shell-script]]
 
 ## How to
 
