@@ -55,7 +55,8 @@ interface Document {
       disabled: true,
     });
 
-    const parsedFiles: string[] = [];
+    const writtenFiles: string[] = [];
+    const sitemapUrls: string[] = [];
 
     // https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/createLink.html
     const linkRegex = /\[\[(.+?)\]\]/g;
@@ -70,8 +71,8 @@ interface Document {
       ];
     };
     
-    const parseMarkdown = (filename: string, breadcrumbs: string[]): Document => {
-      parsedFiles.push(filename);
+    const writeHtmlFromMarkdown = (filename: string, breadcrumbs: string[]): Document => {
+      writtenFiles.push(filename);
 
       const preContents = '[[toc]]\n\n';
       const markdown = fs.readFileSync(`${MARKDOWN_DIRECTORY_PATH}/${filename}.md`).toString();
@@ -81,36 +82,25 @@ interface Document {
         .replace(linkRegex, '<a href="$1.html">$1</a>');
 
       const links = findInternalLinks(markdown);
-      const children = links.filter((link) => !parsedFiles.includes(link))
-        .map((link) => parseMarkdown(link, [...breadcrumbs, link]));
+      const children = links.filter((link) => !writtenFiles.includes(link))
+        .map((link) => writeHtmlFromMarkdown(link, [...breadcrumbs, link]));
 
-      const title = markdown.match(/^#\s.*/)[0].replace(/^#\s/, '');
-      return { title, filename, html, breadcrumbs, children };
+      const document: Document = { title: markdown.match(/^#\s.*/)[0].replace(/^#\s/, ''), filename, html, breadcrumbs, children };
+
+      fs.writeFileSync(`${DIST_DIRECTORY_PATH}/${filename}.html`, ejs.render(String(TEMPLATE_FILE_PATH), { document }));
+      sitemapUrls.push(`<url><loc>https://wikiwikiwi.vercel.app/${filename}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
+
+      return document;
     };
 
-    const writeHTML = (document: Document) => {
-      fs.writeFileSync(
-        `${DIST_DIRECTORY_PATH}/${document.filename}.html`,
-        ejs.render(String(TEMPLATE_FILE_PATH), { document }),
-      );
+    writeHtmlFromMarkdown('index', []);
 
-      document.children.map((child) => writeHTML(child));
-    };
-
-    const writeSitemap = () => {
-      const htmlFiles = fs.readdirSync(DIST_DIRECTORY_PATH).filter((file) => !file.startsWith('.'));
-      const urls = htmlFiles.map((file) => `<url><loc>https://wikiwikiwi.vercel.app/${file}</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
-      const content = `<?xml version="1.0" encoding="UTF-8"?>
+    fs.writeFileSync(
+      SITEMAP_PATH,
+      `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url><loc>https://wikiwikiwi.vercel.app/</loc><changefreq>daily</changefreq><priority>1.00</priority></url>
-${urls.join('\n')}
-</urlset>
-`;
-      fs.writeFileSync(SITEMAP_PATH, content);
-    };
-
-    const root = parseMarkdown('index', []);
-
-    writeHTML(root);
-    writeSitemap();
+${sitemapUrls.join('\n')}
+</urlset>`,
+    );
 })();
