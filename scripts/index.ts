@@ -55,18 +55,24 @@ interface Document {
       disabled: true,
     });
 
+    const parsedFiles: string[] = [];
+
     // https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/createLink.html
     const linkRegex = /\[\[(.+?)\]\]/g;
     const labeledLinkRegex = /\[\[(.+?)\]\]\{(.+?)\}/g;
 
-    const findInternalLinks = (markdown: string) => {
+    const findInternalLinks = (markdown: string): string[] => {
       return [
-        ...markdown.match(linkRegex)?.map((link) => link.replace(/(\[\[)|(\]\])/g, '')) || [],
-        ...markdown.match(labeledLinkRegex)?.map((link) => link.replace(/(\[\[)|(\]\])|({(.+?)})/g, '')) || [],
+        ...new Set([
+          ...markdown.match(linkRegex)?.map((link) => link.replace(/(\[\[)|(\]\])/g, '')) || [],
+          ...markdown.match(labeledLinkRegex)?.map((link) => link.replace(/(\[\[)|(\]\])|({(.+?)})/g, '')) || [],
+        ])
       ];
     };
     
     const parseMarkdown = (filename: string, breadcrumbs: string[]): Document => {
+      parsedFiles.push(filename);
+
       const preContents = '[[toc]]\n\n';
       const markdown = fs.readFileSync(`${MARKDOWN_DIRECTORY_PATH}/${filename}.md`).toString();
 
@@ -75,7 +81,8 @@ interface Document {
         .replace(linkRegex, '<a href="$1.html">$1</a>');
 
       const links = findInternalLinks(markdown);
-      const children = links.map((link) => parseMarkdown(link, [...breadcrumbs, link]));
+      const children = links.filter((link) => !parsedFiles.includes(link))
+        .map((link) => parseMarkdown(link, [...breadcrumbs, link]));
 
       const title = markdown.match(/^#\s.*/)[0].replace(/^#\s/, '');
       return { title, filename, html, breadcrumbs, children };
