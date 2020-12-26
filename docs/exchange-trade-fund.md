@@ -18,10 +18,11 @@
 * 지수와 반대 방향으로 움직이는 ETF.
 * 추종 지수가 1% 상승하면 1% 하락.
 
-### Leverate ETF
+### Leverage ETF
 
 * 지수보다 가치가 더 많이 변동하는 ETF.
 * 레버리지가 2배일 경우 추종 지수가 1% 상승하면 2% 상승.
+* [장기적으로 결국 하락한다.](https://www.youtube.com/watch?v=VyJzRrBCaV0)
 
 ## References
 
