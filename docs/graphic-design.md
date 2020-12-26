@@ -7,3 +7,7 @@
 ## Lectures
 
 * [[visual-communication-design]]
+
+## Docs
+
+* [[awesome-graphic-designers]]
