@@ -6,6 +6,6 @@
 
 ## [[tools]]{Tools}
 
-## [[history]]{History}
+## [[memo]]{Memo}
 
 ## [[etc]]{etc.}
