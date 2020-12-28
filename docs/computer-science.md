@@ -10,6 +10,7 @@
 * [[git-rebase-onto]]
 * [[unix-command-line-tools]]
 * [[shell-script]]
+* [[katex]]
 
 ## Programming Languages
 
@@ -35,6 +36,10 @@
 * [[rest-representational-state-transfer]]
 * [[concrete-mathematics]]
 * [[designing-data-intensive-applications]]
+
+## Lectures
+
+* [[computer-organization-and-design]]
 
 ## How to
 
