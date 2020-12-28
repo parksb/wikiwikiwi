@@ -40,6 +40,7 @@
 ## Lectures
 
 * [[computer-organization-and-design]]
+* [[computer-network]]
 
 ## How to
 
