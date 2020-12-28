@@ -39,3 +39,9 @@
 ## How to
 
 * [[how-to-update-gpg-key-on-github]]
+
+## Tools
+
+* [[jetbrains-keymap]]
+* [[visual-studiow-code-keymap]]
+* [[vim]]
