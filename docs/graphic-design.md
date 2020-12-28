@@ -9,4 +9,4 @@
 ## Lectures
 
 * [[visual-communication-design]]
-
+* [[digital-typography]]

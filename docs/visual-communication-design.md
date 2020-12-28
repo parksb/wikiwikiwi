@@ -229,4 +229,4 @@
 
 ## References
 
-* [아주대학교, DGMD251 비주얼커뮤니케이션디자인, 2018.](https://github.com/ParkSB/ajou-campus-life/tree/master/DGMD251_Visual-Communication-Design)
+* [아주대학교, 비주얼커뮤니케이션디자인, 2018.](https://github.com/parksb/campus-life/tree/master/%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98%EB%94%94%EC%9E%90%EC%9D%B8)
