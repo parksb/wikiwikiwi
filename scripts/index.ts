@@ -1,5 +1,5 @@
 import * as ejs from 'ejs';
-import * as fs from 'fs';
+import { promises as fs } from 'fs';
 import * as path from 'path';
 
 import * as MarkdownIt from 'markdown-it';
@@ -12,11 +12,6 @@ import * as mdTableOfContents from 'markdown-it-table-of-contents';
 import * as mdInlineComment from 'markdown-it-inline-comments';
 import * as mdCheckbox from 'markdown-it-task-checkbox';
 
-const MARKDOWN_DIRECTORY_PATH: string = path.join(__dirname, '../docs');
-const DIST_DIRECTORY_PATH: string = path.join(__dirname, '../build');
-const TEMPLATE_FILE_PATH: Buffer = fs.readFileSync(path.join(__dirname, './index.ejs'));
-const SITEMAP_PATH = `${DIST_DIRECTORY_PATH}/sitemap.xml`;
-
 interface Document {
   title: string;
   filename: string; // without extension
@@ -25,7 +20,12 @@ interface Document {
   children: Document[];
 }
 
-(() => {
+(async () => {
+  const MARKDOWN_DIRECTORY_PATH: string = path.join(__dirname, '../docs');
+  const DIST_DIRECTORY_PATH: string = path.join(__dirname, '../build');
+  const TEMPLATE_FILE_PATH: Buffer = await fs.readFile(path.join(__dirname, './index.ejs'));
+  const SITEMAP_PATH = `${DIST_DIRECTORY_PATH}/sitemap.xml`;
+
   const md: MarkdownIt = new MarkdownIt({
     html: false,
     xhtmlOut: false,
@@ -71,23 +71,25 @@ interface Document {
       ];
     };
     
-    const writeHtmlFromMarkdown = (filename: string, breadcrumbs: string[]): Document => {
+    const writeHtmlFromMarkdown = async (filename: string, breadcrumbs: string[]) => {
       writtenFiles.push(filename);
 
       const preContents = '[[toc]]\n\n';
-      const markdown = fs.readFileSync(`${MARKDOWN_DIRECTORY_PATH}/${filename}.md`).toString();
+      const markdown = (await fs.readFile(`${MARKDOWN_DIRECTORY_PATH}/${filename}.md`)).toString();
 
       const html = md.render(`${preContents}${markdown}`)
         .replace(labeledLinkRegex, '<a href="$1.html">$2</a>')
         .replace(linkRegex, '<a href="$1.html">$1</a>');
 
       const links = findInternalLinks(markdown);
-      const children = links.filter((link) => !writtenFiles.includes(link))
-        .map((link) => writeHtmlFromMarkdown(link, [...breadcrumbs, link]));
+      const children = await Promise.all(
+        links.filter((link) => !writtenFiles.includes(link))
+          .map(async (link) => writeHtmlFromMarkdown(link, [...breadcrumbs, link]))
+      );
 
       const document: Document = { title: markdown.match(/^#\s.*/)[0].replace(/^#\s/, ''), filename, html, breadcrumbs, children };
 
-      fs.writeFileSync(`${DIST_DIRECTORY_PATH}/${filename}.html`, ejs.render(String(TEMPLATE_FILE_PATH), { document }));
+      fs.writeFile(`${DIST_DIRECTORY_PATH}/${filename}.html`, ejs.render(String(TEMPLATE_FILE_PATH), { document }));
       sitemapUrls.push(`<url><loc>https://wikiwikiwi.vercel.app/${filename}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
 
       return document;
@@ -95,7 +97,7 @@ interface Document {
 
     writeHtmlFromMarkdown('index', []);
 
-    fs.writeFileSync(
+    fs.writeFile(
       SITEMAP_PATH,
       `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
