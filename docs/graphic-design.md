@@ -1,5 +1,7 @@
 # Graphic Design
 
+* [[awesome-graphic-designers]]
+
 ## Books & Papers
 
 * [[basic-design-textbook]]
@@ -8,6 +10,3 @@
 
 * [[visual-communication-design]]
 
-## Docs
-
-* [[awesome-graphic-designers]]

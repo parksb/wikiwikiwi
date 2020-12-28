@@ -1,5 +1,16 @@
 # Computer Science
 
+* [[npm-distribution]]
+* [[ssh-key]]
+* [[difference-between-127-0-0-1-and-0-0-0-0]]
+* [[llvm]]
+* [[abstract-syntax-tree]]
+* [[dynamic-language-vs-static-language]]
+* [[git-switch-and-restore]]
+* [[git-rebase-onto]]
+* [[unix-command-line-tools]]
+* [[shell-script]]
+
 ## Programming Languages
 
 ### [[rust]]{Rust}
@@ -24,19 +35,6 @@
 * [[rest-representational-state-transfer]]
 * [[concrete-mathematics]]
 * [[designing-data-intensive-applications]]
-
-## Docs
-
-* [[npm-distribution]]
-* [[ssh-key]]
-* [[difference-between-127-0-0-1-and-0-0-0-0]]
-* [[llvm]]
-* [[abstract-syntax-tree]]
-* [[dynamic-language-vs-static-language]]
-* [[git-switch-and-restore]]
-* [[git-rebase-onto]]
-* [[unix-command-line-tools]]
-* [[shell-script]]
 
 ## How to
 
