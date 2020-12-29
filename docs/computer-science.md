@@ -9,14 +9,13 @@
 * [[git-switch-and-restore]]
 * [[git-rebase-onto]]
 * [[unix-command-line-tools]]
-* [[shell-script]]
 * [[katex]]
 
 ## Programming Languages
 
-### [[rust]]{Rust}
-
-### [[typescript]]{TypeScript}
+* [[rust]]
+* [[typescript]]
+* [[shell-script]]
 
 ## Web Back-end
 
