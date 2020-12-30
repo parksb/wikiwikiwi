@@ -1,8 +1,8 @@
 # Rust
 
-* 러스트는 [그레이든 호어(Graydon Hoare)](https://github.com/graydon)가 만들기 시작해, 모질라가 메인테이닝한 프로그래밍 언어다. 
-* 다양한 언어로부터 영향을 받았다. 데이터 타입이나 추상 머신 모델은 C, 옵셔널 바인딩은 스위프트, 함수형 프로그래밍은 하스켈, 속성은 ECMA, 메모리 모델은 C++ 등.
-* 거의 C 정도로 안정적이라는 느낌. (성능은 C 정도는 아니고, C++ 정도인 것 같다.) 모질라 재단에서 메인테이닝하는 것도 너무 좋다.
+* 모질라의 개발자 [그레이던 호어(Graydon Hoare)](https://github.com/graydon)의 사이드 프로젝트로 시작.
+* 파이어폭스 [Servo](https://github.com/servo/servo), 구글 [Fuchsia](https://fuchsia.googlesource.com/fuchsia/), 삼성, 애플, MS, 페이스북, [AWS](https://aws.amazon.com/ko/blogs/opensource/why-aws-loves-rust-and-how-wed-like-to-help/), [Cloudflare](https://blog.cloudflare.com/tag/rust/), [Discord](https://blog.discord.com/why-discord-is-switching-from-go-to-rust-a190bbca2b1f?gi=cd596dd81c8) 등.
+* 안전성, 동시성, 실용성 측면에서 C/C++ 자리를 대체할 언어.
 
 ## The Rust Programming Language
 
