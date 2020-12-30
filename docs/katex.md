@@ -54,6 +54,16 @@ x_1 + \dots + x_n
 \end{cases}
 ```
 
+## Aligned
+
+```math
+\begin{aligned}
+1.10101010100001101000010 &= 1 + (1 \times 2^{-1}) + (0 \times 2^{-2}) + (1 \times 2^{-3}) + (0 \times 2^{-4}) + \dots \\
+&=1 + 2^{-1} + 2^{-3} + 2^{-5} + 2^{-7} + 2^{-9} + 2^{-14} + 2^{-15} + 2^{-17} + 2^{-22} \\
+&=1.0 + 0.666115
+\end{aligned}
+```
+
 ## References
 
 * ["KaTeX", katex.org.](https://katex.org/)
