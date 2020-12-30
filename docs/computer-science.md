@@ -10,6 +10,7 @@
 * [[git-rebase-onto]]
 * [[unix-command-line-tools]]
 * [[katex]]
+* [[floating-point]]
 
 ## Programming Languages
 
