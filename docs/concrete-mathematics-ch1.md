@@ -22,24 +22,25 @@ T_n \leq 2T_{n - 1} + 1, n \gt 0 \text{에 대해.}
 * 따라서 더 적은 수의 이동으로 탑을 옮길 수 없으며, 다음 식이 성립한다:
 
 ```math
-\begin{matrix}
-T_n \geq 2T_{n - 1} + 1, n \gt 0 \text{에 대해.} \\
-T_0 = 0; T_n = 2T_{n - 1} + 1, n \gt 0 \text{에 대해. (1.1)}
-\end{matrix}
+\begin{aligned}
+T_n &\geq 2T_{n - 1} + 1, n \gt 0 \text{에 대해.} \\
+T_0 &= 0 \\
+T_n &= 2T_{n - 1} + 1, n \gt 0 \text{에 대해. (1.1)}
+\end{aligned}
 ```
 
 * 이러한 식을 점화식이라고 하며, 경계값(boundary value)와 방정식으로 구성된다.
 * 닫힌 형식(closed form): 주어진 수량을 그 수량 자신을 이용하지 않고 표현하는 식. 이걸 구하면 $`n`$이 아무리 커도 빠르게 점화식의 해를 구할 수 있다. 작은 사례들을 살펴보자:
 
 ```math
-\begin{matrix}
-T_3 = 2 \times 3 + 1 \\
-T_4 = 2 \times 7 + 1 \\
-T_5 = 2 \times 15 + 1 \\
-T_6 = 2 \times 31 + 1 \\
-\dots \\
-T_n = 2^n - 1, n \geq 0 \text{에 대해. (1.2)}
-\end{matrix}
+\begin{aligned}
+T_3 &= 2 \times 3 + 1 \\
+T_4 &= 2 \times 7 + 1 \\
+T_5 &= 2 \times 15 + 1 \\
+T_6 &= 2 \times 31 + 1 \\
+&\dots \\
+T_n &= 2^n - 1, n \geq 0 \text{에 대해. (1.2)}
+\end{aligned}
 ```
 
 * 수학적 귀납법에서 $`n`$의 가장 작은 값 $`n_0`$에 대해 증명하는 것을 기초 단계라고 부른다.
@@ -48,7 +49,11 @@ T_n = 2^n - 1, n \geq 0 \text{에 대해. (1.2)}
 * 식 (1.2)가 성립한다는 가정하에, 식 (1.1)과 식 (1.2)로부터 다음 등식을 얻을 수 있음:
 
 ```math
-T_n = 2T_{n - 1} + 1 = 2(2^{n - 1} - 1) + 1 = 2^n - 1
+\begin{aligned}
+T_n &= 2T_{n - 1} + 1 \\
+&= 2(2^{n - 1} - 1) + 1 \\
+&= 2^n - 1
+\end{aligned}
 ```
 
 ## 평면의 선들
@@ -59,30 +64,33 @@ T_n = 2T_{n - 1} + 1 = 2(2^{n - 1} - 1) + 1 = 2^n - 1
 * 하나의 새 선은 기존의 선 $`n - 1`$개와 많아야 $`n - 1`$개의 서로 다른 점에서 교차한다. 따라서 다음과 같은 점화식을 얻을 수 있다:
 
 ```math
-L_0 = 1; L_n = L_{n - 1} + n, n \gt 0 \text{에 대해.}
+\begin{aligned}
+L_0 &= 1 \\
+L_n &= L_{n - 1} + n, n \gt 0 \text{에 대해.}
+\end{aligned}
 ```
 
 * 닫힌 형식을 구해보자. $`1, 2, 4, 7, 11, 16, ...`$에서는 패턴을 찾기 힘들다. 점화식을 펼치면 점화식을 더 잘 이해할 수 있다:
 
 ```math
-\begin{matrix}
-L_n = L_{n - 1} + n \\
-= L_{n - 2} + (n - 1) + n \\
-= L_{n - 3} + (n - 2) + (n - 1) + n \\
-= L_0 + 1 + 2 + \dots + (n - 2) + (n - 1) + n \\
-= 1 + S_n, \text{여기서} S_n \text{은} 1 + 2 + 3 + \dots + (n - 1) + n.
-\end{matrix}
+\begin{aligned}
+L_n &= L_{n - 1} + n \\
+&= L_{n - 2} + (n - 1) + n \\
+&= L_{n - 3} + (n - 2) + (n - 1) + n \\
+&= L_0 + 1 + 2 + \dots + (n - 2) + (n - 1) + n \\
+&= 1 + S_n, \text{여기서} S_n \text{은} 1 + 2 + 3 + \dots + (n - 1) + n.
+\end{aligned}
 ```
 
 * 가우스가 9살 때 생각해낸 방법으로 해를 구할 수 있다. (이미 아르키메데스가 사용하긴 했다.)
 
 ```math
-\begin{matrix}
-2S_n = [1 + 2 + 3 + \dots + (n - 1) + n] + [n + (n - 2) + (n - 1) + \dots + 2 + 1] \\
-= (n + 1) + (n + 1) + (n + 1) + \dots + (n + 1) + (n + 1) \\
-= n(n + 1), n \geq \text{에 대해.} \\
-\therefore L_n = {{n(n + 1)} \over 2} + 1, n \geq \text{에 대해.}
-\end{matrix}
+\begin{aligned}
+2S_n &= [1 + 2 + 3 + \dots + (n - 1) + n] + [n + (n - 2) + (n - 1) + \dots + 2 + 1] \\
+&= (n + 1) + (n + 1) + (n + 1) + \dots + (n + 1) + (n + 1) \\
+&= n(n + 1), n \geq \text{에 대해.} \\
+&\therefore L_n = {{n(n + 1)} \over 2} + 1, n \geq \text{에 대해.}
+\end{aligned}
 ```
 
 ## 요세푸스 문제 
