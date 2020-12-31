@@ -1,18 +1,22 @@
 # Goodbye 2020
 
+> 1,814 contributions in 2020 
+
+![1,814 contributions in 2020](https://user-images.githubusercontent.com/6410412/103403673-5c41ef00-4b94-11eb-8de7-dc5d8054dfdf.png)
+
 ## 한 일
 
 * Goodbye라고 말하기 어려운 1년이었다.
   * 원래 밖에 잘 안 나가지만, 몇 개월 내내 전혀 나가지 않으니 심하게 무기력해졌다.
-  * 외적 조치가 필요한 것 같아서 마그네슘 + 비타민D + 칼슘 영양제를 먹기 시작했다.
-* **코로나 때문에 정말 사상 초유의 사태였다.**
-  * [처음으로 재택근무를 했다.](https://news.joins.com/article/23715173)
+  * 8월 이후로는 거의 회사 일만 한 것 같다.
+* **[코로나 때문에 재택근무를 했다.](https://news.joins.com/article/23715173)**
   * 재택 초기에는 출퇴근의 경계가 모호하다보니 한없이 일하는 문제가 있었다. 요즘엔 방으로 출근, 거실로 퇴근한다.
+  * 장시간 화상 회의에는 더 많은 에너지를 쓰게된다. 상대방이 나를 보는건지 아닌지 구분할 수 없는게 큰 차이 같았다.
 * [닷페이스](https://dotface.kr/membership)와 [모질라](https://donate.mozilla.org/ko/)에 후원을 시작했다.
 * UX팀으로 인사 변경이 있었다:
   * 기능조직이 목적조직으로 바뀌고, 업무 방식이 충돌하며 처음엔 많이 힘들었다.
   * 좋은 조직 문화에 대해 많이 생각해보게 됐다.
-* 새 팀에서 코틀린 스프링 서버를 새롭게 구축했다:
+* **새 팀에서 코틀린 스프링 서버를 새롭게 구축했다:**
   * 덕분에 각종 아키텍처, [특히 MSA에 대해 다시 생각해보게 됐다.](https://youtu.be/SrQeIz3gXZg)
   * 코틀린과 스프링을 써본적이 없어서 한달 동안 속성으로 공부하고 바로 프로덕션 개발을 했다.
   * 코틀린은 만족. 스프링은...편리하지만 앞으로는 될 수 있다면 피하고 싶다. 승용차를 원하는데 중장비에 올라탄 기분이다. 
@@ -24,8 +28,7 @@
 * 고통은 끝이 없다. 연말에는 갑자기 발톱이 살을 파고 들어서 치료를 받았다. 끔찍했다.
 * 추석 연휴동안 스파이더트론을 완성했다. 우주선보다 더 만족스럽다.
   ![Factorio spidertron](https://user-images.githubusercontent.com/6410412/102870872-fd3bf600-4480-11eb-9266-16a1be90b21c.png)
-* 친구들이랑 어몽어스 정기 모임을 만들었다. 그냥 우기면 이기는 패턴이 반복돼서 결국 자연소멸.
-  * 사실 더 큰 이유는 정기 멤버 5명이 같이 게임할 나머지 5명을 못 구해서... 졸업한지 3년된 고등학교 톡방에서까지 모집했지만 (당연히) 아무도 안 해줬다.
+* 친구들이랑 어몽어스 정기 모임을 만들었다. 증거같은게 없고 그냥 우기면 이기는 패턴이 반복돼서 금방 질렸다.
 * 팀 리더님이 생일선물로 용신목을 보내주셔서 키우기 시작했다.
 * 작년부터 ETF 투자를 해오다가 올해는 처음으로 직접 투자를 해봤다. 재밌지만 역시 나한테는 ETF가 잘 맞는다는 것만 깨달았다.
 * **2종 보통 운전면허를 땄다:**
@@ -45,7 +48,7 @@
   ![감사합니다. 코로나로 대학강의가 인강으로 대체되었는데, 자습에 한계를 느껴 참고하게 되었습니다. 굉장히 도움이 되었습니다.](https://user-images.githubusercontent.com/6410412/102870864-f90fd880-4480-11eb-9fbc-c81803c44096.png)
 * 사무실이 선릉에서 삼성으로 이사했다. 27층이라 뷰가 엄청 좋은데 거의 출근을 못했다.
 * 새 언어 공부를 많이했다:
-  * 이젠 코틀린에 익숙해졌고, 스칼라도 사내 스터디로 휘리릭 공부해봤다.
+  * 이젠 코틀린에 익숙해졌고, 스칼라도 사내 스터디로 휘리릭 얕게 공부해봤다.
   * [TRPL](https://doc.rust-lang.org/book/) 완독하고, 토이 프로젝트도 했다. 연초 목표하던 수준으로 러스트를 다룰 수 있게 돼서 기쁘다. 
   * 프론트엔드에 러스트, Elm, ReasonML을 써봤다. 각종 라이브러리를 쓰려니 결국 타입스크립트로 돌아왔다. 나중엔 ReasonML로 마이그레이션하고 싶다.
 * [TV, 버스, 전광판 광고에 우리 회사가 나와서 신기했다.](https://youtu.be/8-_4IjhhW14)
@@ -72,7 +75,8 @@
 * **칼 마르크스, 프리드리히 앵겔스, "공산당선언", 이진우 역, 책세상, 2018**
   * 맹장 수술하고 입원 중 읽었다. 보다 일찍 읽었으면 나를 더 강경하게 만들었을 것 같다.
 * 마틴 파울러, "리팩토링 2판", 개앞맵시, 남기혁 역, 한빛미디어, 2020
-* **대런 맥가비, "가난 사파리", 김영선 역, 돌베개, 2020**  * 가난의 대상화에 대한 당사자로서의 관점. 이렇게 솔직한 글은 만나기 힘들다.
+* **대런 맥가비, "가난 사파리", 김영선 역, 돌베개, 2020**
+  * 가난의 대상화에 대한 당사자로서의 관점. 이렇게 솔직한 글은 만나기 힘들다.
 * 마이클 돕스, "1962", 박수민 역, 모던아카이브, 2019
   * 쿠바 미사일 위기를 미국, 소련, 쿠바 입장에서 풀어낸 논픽션. 몰입도가 굉장했다.
   * 한때 국가나 회사같은 큰 조직은 시스템을 따라 자동으로 굴러갈 수 있다고 생각했는데, 사실 추상화가 잘 되어 있어서 그렇게 생각한 것 같다.
@@ -84,7 +88,7 @@
 인상적이었던 글. 기술 관련된 글은 주로 논문이나 RFC 문서로 읽었다. 대중교통을 안 타니까 포켓에 글이 쌓이기만 한다.
 
 * [곽재식, "이상한 녹정 이야기", 2020](http://mirrorzine.kr/shortstory/140147)
-  * 예전에 "오케이 구글"하는 TV 광고가 있었는데 광고가 나올때마다 집에 있는 핸드폰이 몽땅 대답하곤 했다. 그게 생각났다...
+  * 예전에 "오케이 구글"하는 TV 광고가 있었는데 광고가 나올때마다 집에 있는 핸드폰이 몽땅 대답하곤 했던게 생각났다.
 * [George Cave, "The UX of lego interface panels", 2020](https://www.designedbycave.co.uk/2020/LEGO-Interface-UX/)
 * **[Ehsan Noursalehi, "Why Do We Interface?", 2020](https://whydoweinterface.com/)**
 * [Jez Swanson, "An Interactive Introduction to Fourier Transforms", 2020](http://www.jezzamon.com/fourier/index.html)
@@ -95,19 +99,18 @@
 * [Gergely Orosz, "Scaling Engineering Teams via RFCs: Writing Things Down", 2020](https://blog.pragmaticengineer.com/scaling-engineering-teams-via-writing-things-down-rfcs/)
 * 오영호, 이상영, "보건의료 환경 변화에 따른 중장기 의료 인력 추계와 정책과제", 한국보건사회연구원, 2016
 * 김지수, 문종섭, "웹 로컬스토리지 데이터 보안을 위한 연구", 한국 인터넷 정보학회, 17(3), 2016
+  * 올해 시작한 토이 프로젝트 [Darim](https://github.com/parksb/darim)의 프라이빗 키 보관을 위한 이론적 배경이 됐다. 
 * [[criminal-abortion]]{헌법재판소, "헌법재판소 결정 2017헌바127 형법 제269조 제1항 등 위헌소원", 2019}
-  * 낙태죄에 대한 헌법불합치 결정. 대체 입법 기한은 올해 12월 31일까지다.
-* **S. Keshav, "How to Read a Paper", David R. Cheriton School of Computer Science, University of Waterloo**
-* S. Bradner, "Key words for use in RFCs to Indicate Requirement Levels", RFC 2119, 1997
+  * 낙태죄에 대한 헌법불합치 결정. 개선 입법 기한은 올해 12월 31일까지다.
+* S. Keshav, "How to Read a Paper", David R. Cheriton School of Computer Science, University of Waterloo
 * **Melvin E. Conway, "How Do Committees Invent?", F. D. Thompson Publications, Inc., 1968**
   * 우리 회사 MSA가 생각났다. 작년에 20여명의 개발자가 두 팀으로 일할 때는 MSA의 단점밖에 안 보였다.
   * 하지만 올해 100여명의 개발자들이 여러 팀으로 일하게 되며 의사결정 과정도 분리되고, 각 팀이 서비스를 담당하게 되니까 이제 MSA의 장점이 보인다.
-* M. Belshe, R. Peon, M. Thomson, Ed., "Hypertext Transfer Protocol Version 2 (HTTP/2)", RFC 7540, 2015
 * M. Bishop, Ed., "Hypertext Transfer Protocol Version 3 (HTTP/3)", Internet-Draft, 2020
 * D. Eastlake 3rd, C. Manros, E. Raymond, "Etymology of 'Foo'", RFC 3092, 2001
 * 최재영, 권경재, 손민주, 정근호, "메타폰트를 이용한 차세대 CJK 폰트 기술", 글자씨, 9(1), 2017
-* 강이룬, 소원영, "multiliingual.js: 다국어 웹 타이포그래피를 위한 섞어쓰기 라이브러리", 글자씨, 8(1), 2016
 * 김병조, "다국어 타이포그래피의 기술적 문제", 글자씨, 8(1), 2016
+  * 한국타이포그라피학회 논문이 다 너무 재밌었다. 주말이 아깝지 않았다.
 
 ## 쓴 글
 
@@ -200,6 +203,7 @@
 
 * Maintaining [handmade-blog](https://github.com/parksb/handmade-blog)
   * 작년에 시작한 정적 블로그 생성기 프로젝트. 올해 Hacktoberfest를 통해 많은 기여를 받았다.
+  * 영어, 한국어 외에 4개 국어로 README 문서가 만들어졌다.
 * Maintaining [the-camp-lib](https://github.com/parksb/the-camp-lib)
 * Maintaining [markdown-it-front-matter](https://github.com/parksb/markdown-it-front-matter)
   * markdown-it 플러그인. [TroyTae](https://github.com/TroyTae)님으로부터 넘겨받은 다사다난한 프로젝트다.
