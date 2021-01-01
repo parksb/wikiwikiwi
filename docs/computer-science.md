@@ -8,7 +8,6 @@
 * [[dynamic-language-vs-static-language]]
 * [[git-switch-and-restore]]
 * [[git-rebase-onto]]
-* [[unix-command-line-tools]]
 * [[katex]]
 * [[floating-point]]
 
@@ -16,7 +15,6 @@
 
 * [[rust]]
 * [[typescript]]
-* [[shell-script]]
 
 ## Web Back-end
 
@@ -48,6 +46,7 @@
 
 ## Tools
 
+* [[unix]]
 * [[jetbrains-keymap]]
 * [[visual-studiow-code-keymap]]
 * [[vim]]
