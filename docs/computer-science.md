@@ -50,3 +50,4 @@
 * [[jetbrains-keymap]]
 * [[visual-studiow-code-keymap]]
 * [[vim]]
+* [[fish-shell]]
