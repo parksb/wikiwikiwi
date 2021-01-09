@@ -1,6 +1,4 @@
 # Fish Shell
- 
-https://fishshell.com/docs/current/index.html
 
 ## Installation
 
@@ -37,3 +35,19 @@ https://github.com/oh-my-fish/plugin-z
 ```sh
 $ omf install z
 ```
+
+## Notes
+
+### `$PATH`
+
+```sh
+$ echo $PATH
+/usr/bin /bin /usr/sbin /sbin /usr/local/bin
+$ set PATH $PATH $HOME/.cargo/bin
+$ echo $PATH
+/usr/bin /bin /usr/sbin /sbin /usr/local/bin /home/.cargo/bin
+```
+
+## References
+
+* [fish-shell documentation](https://fishshell.com/docs/current/index.html)
