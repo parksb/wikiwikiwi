@@ -95,7 +95,7 @@ interface Document {
       return document;
     };
 
-    writeHtmlFromMarkdown('index', []);
+    await writeHtmlFromMarkdown('index', []);
 
     fs.writeFile(
       SITEMAP_PATH,
