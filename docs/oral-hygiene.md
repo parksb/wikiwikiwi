@@ -27,6 +27,8 @@
 
 * 치간 클리너는 필립스 추천이 많은 듯.
   * [Sonicare AirFloss](https://www.philips.co.kr/c-m-pe/philips-sonicare-airfloss/airfloss/latest#)
+* 교정한 사람은 일반 치실쓰기가 쉽지 않다:
+  * Oral-B Superfloss - 앞쪽이 단단해서 철사 사이로 치실을 넣을 수 있음.
 
 ## References
 
