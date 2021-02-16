@@ -1,6 +1,7 @@
 import * as ejs from 'ejs';
 import { promises as fs } from 'fs';
 import * as path from 'path';
+import * as dayjs from 'dayjs';
 
 import * as MarkdownIt from 'markdown-it';
 import * as katex from 'katex';
@@ -101,7 +102,7 @@ interface Document {
       SITEMAP_PATH,
       `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url><loc>https://wikiwikiwi.vercel.app/</loc><changefreq>daily</changefreq><priority>1.00</priority></url>
+<url><loc>https://wikiwikiwi.vercel.app/</loc><lastmod>${dayjs().format('YYYY-MM-DDTHH:mm:ss')}+00:00</lastmod><changefreq>daily</changefreq><priority>1.00</priority></url>
 ${sitemapUrls.join('\n')}
 </urlset>`,
     );
