@@ -35,6 +35,7 @@
 * [[rest-representational-state-transfer]]
 * [[concrete-mathematics]]
 * [[designing-data-intensive-applications]]
+* [[database-system-concepts]]
 
 ## Lectures
 
