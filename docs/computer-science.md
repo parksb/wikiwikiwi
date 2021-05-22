@@ -53,3 +53,8 @@
 * [[visual-studiow-code-keymap]]
 * [[vim]]
 * [[fish-shell]]
+
+## Mathematics
+
+* [[cartesian-product]]
+
