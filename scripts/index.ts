@@ -22,6 +22,7 @@ interface Document {
 }
 
 (async () => {
+  const WEBSITE_DOMAIN = 'https://wikiwikiwi.vercel.app';
   const MARKDOWN_DIRECTORY_PATH: string = path.join(__dirname, '../docs');
   const DIST_DIRECTORY_PATH: string = path.join(__dirname, '../build');
   const TEMPLATE_FILE_PATH: Buffer = await fs.readFile(path.join(__dirname, './index.ejs'));
@@ -79,8 +80,8 @@ interface Document {
       const markdown = (await fs.readFile(`${MARKDOWN_DIRECTORY_PATH}/${filename}.md`)).toString();
 
       const html = md.render(`${preContents}${markdown}`)
-        .replace(labeledLinkRegex, '<a href="$1.html">$2</a>')
-        .replace(linkRegex, '<a href="$1.html">$1</a>');
+        .replace(labeledLinkRegex, '<a href="/$1.html">$2</a>')
+        .replace(linkRegex, '<a href="/$1.html">$1</a>');
 
       const links = findInternalLinks(markdown);
       const children = await Promise.all(
@@ -91,7 +92,7 @@ interface Document {
       const document: Document = { title: markdown.match(/^#\s.*/)[0].replace(/^#\s/, ''), filename, html, breadcrumbs, children };
 
       fs.writeFile(`${DIST_DIRECTORY_PATH}/${filename}.html`, ejs.render(String(TEMPLATE_FILE_PATH), { document }));
-      sitemapUrls.push(`<url><loc>https://wikiwikiwi.vercel.app/${filename}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
+      sitemapUrls.push(`<url><loc>${WEBSITE_DOMAIN}/${filename}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
 
       return document;
     };
@@ -102,7 +103,7 @@ interface Document {
       SITEMAP_PATH,
       `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url><loc>https://wikiwikiwi.vercel.app/</loc><lastmod>${dayjs().format('YYYY-MM-DDTHH:mm:ss')}+00:00</lastmod><changefreq>daily</changefreq><priority>1.00</priority></url>
+<url><loc>${WEBSITE_DOMAIN}/</loc><lastmod>${dayjs().format('YYYY-MM-DDTHH:mm:ss')}+00:00</lastmod><changefreq>daily</changefreq><priority>1.00</priority></url>
 ${sitemapUrls.join('\n')}
 </urlset>`,
     );
