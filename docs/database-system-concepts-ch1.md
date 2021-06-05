@@ -4,14 +4,14 @@
 * 일련의 데이터는 데이터베이스라고 하며, 기업과 관련된 정보를 포함한다.
 * DBMS의 주요 목표는 데이터베이스를 편리하게, 효과적으로 저장하고 검색하는 방법을 제공하는 것이다.
 
-## 1.1. Database-System Applications
+## Database-System Applications
 
 * 60년대 데이터베이스 시스템은 현재에 비해 간단했다.
 * 일반적으로 데이터베이스는 두 개의 모드로 사용된다:
   * 온라인 트랜잭션 처리 - 사용자 측면에서 데이터를 검색하고, 업데이트 하는 등의 동작 처리.
   * 데이터 분석 - 기업 측면에서 비즈니스 결정을 위한 데이터 처리.
 
-## 1.2. Purpose of Database Systems
+## Purpose of Database Systems
 
 * 컴퓨터에 정보를 저장하는 가장 쉬운 방법은 파일로 쓰는 것:
   * file-processing system이라고 한다.
@@ -25,12 +25,12 @@
     * 보안 문제
 * 앞으로 이러한 문제를 해결하기 위한 데이터 베이스 시스템을 살펴본다.
 
-## 1.3. View of Data
+## View of Data
 
 * 데이터베이스 시스템의 주요 목적은 유저에게 추상화된 데이터 뷰를 제공하는 것이다.
 * 데이터 모델 - 데이터, 데이터의 관계, 시맨틱, 제약을 설명하기 위한 개념적 도구.
 
-### 1.3.1. Data Models
+### Data Models
 
 * Relational Model:
   * 데이터와 데이터 사이의 관계를 표현하기 위해 테이블을 사용한다.  
@@ -47,12 +47,12 @@
   * OOP의 영향을 받은 데이터 모델.
   * 관계형 모델을 캡슐화, 메서드, 객체 식별로 확장한 것으로 볼 수도 있다.
 
-### 1.3.2. Relational Data Model
+### Relational Data Model
 
 * 관계형 모델에서 데이터는 테이블 형태로 표현된다.
 * 테이블의 각 로우는 하나의 정보 조각을 의미한다.
 
-### 1.3.3. Data Abstraction
+### Data Abstraction
 
 * 대부분의 데이터베이스 시스템 사용자들은 컴퓨터과학에 익숙하지 않다.
 * 따라서 개발자는 여러 계층의 데이터 추상화로 복잡성을 숨겨 사용자와 시스템의 상호작용을 간소화해야 한다:
@@ -78,7 +78,7 @@
     * 사용자에게 데이터베이스의 특정 뷰를 제공한다.
     * 가령 입학처 교직원들은 데이터베이스의 학생 정보에만 접근할 수 있어야 한다. 
 
-### 1.3.4. Instances and Schemas
+### Instances and Schemas
 
 * 데이터베이스는 시간이 지남에 따라 정보가 추가/삭제되며 변한다.
 * 데이터베이스의 정반적인 설계를 데이터베이스 스키마(schema)라고 부른다:
@@ -88,13 +88,13 @@
 * 데이터베이스 시스템에는 추상화 계층에 따른 다양한 스키마가 있다:
   * 뷰 레벨의 스키마는 서브스키마(subschema)라고도 한다.
 
-## 1.4. Database Languages
+## Database Languages
 
 * 데이터베이스 시스템은 data-definition language(DDL)을 제공해 스키마를 정의한다. (SQL에서 `CREATE`, `ALTER`, `DROP` 등)
 * data-manipulation language(DML)은 데이터베이스 쿼리와 업데이트를 표현한다. (`SELECT`, `INSERT`, `UPDATE`, `DELETE` 등)
 * 관습적으로 DDL과 DML은 분리된 언어가 아니며, SQL처럼 하나의 언어에 포함된다. 
 
-### 1.4.1. Data-Definition Language
+### Data-Definition Language
 
 * 예를 들어, 학과 예산 잔고는 음수가 될 수 없다. DDL은 이러한 제약을 걸 수 있도록 해준다.
 * Domain Constraints:
@@ -110,7 +110,7 @@
   * 데이터 딕셔너리는 데이터베이스 시스템 자체만 접근할 수 있는 특수한 테이블이다.
   * 데이터베이스 시스템은 데이터를 읽거나 쓰기 전에 데이터 딕셔너리를 참고한다.
 
-### 1.4.2. The SQL Data-Definition Language
+### The SQL Data-Definition Language
 
 * 아래 SQL DDL은 `department` 테이블을 생성한다.
   ```sql
@@ -118,7 +118,7 @@
   ```
 * SQL DDL은 여러 무결성 제약을 제공한다.
 
-### 1.4.3. Data-Manipulation Language
+### Data-Manipulation Language
 
 * DML에는 크게 두 종류로 나뉜다:
   * Procedural DMLs - 어떤 데이터를 필요로하는지, 그 데이터를 어떻게 가져올지.
@@ -127,11 +127,11 @@
   * 정보 검색을 포함한 DML의 일부분을 쿼리 언어라고 한다.
   * 기술적으로 틀렸지만, 쿼리 언어와 DML은 동의어처럼 사용된다.
 
-### 1.4.4. The SQL Data-Manipulation Language
+### The SQL Data-Manipulation Language
 
 * SQL 쿼리 언어는 선언적이며, 여러 테이블을 입력받고 항상 하나의 테이블을 반환한다.
 
-### 1.4.5. Database Access from Application Programs
+### Database Access from Application Programs
 
 * 선언형 쿼리 언어의 경우, 일반 목적 프로그래밍 언어를 사용할 수 있는 튜링 머신에서는 파워풀하지 않다.
 * 어플리케이션 프로그램은 데이터베이스와 상호작용하는 프로그램이다.
@@ -140,7 +140,7 @@
   * Open Database Connectivity(ODBC) 표준은 여러 언어를 위한 어플리케이션 프로그램 인터페이스를 정의한다.
   * Java Database Connectivity(JDBC) 표준은 자바를 위한 인터페이스를 정의한다.
 
-## 1.5. Database Design
+## Database Design
 
 * 데이터베이스 설계는 데이터베이스 스키마 설계와 연관이 있다.
 * 하이레벨 데이터 모델은 요구사항에 대한 개념적인 프레임워크를 제공한다.
@@ -154,7 +154,7 @@
   * logical-design phase: 하이레벨의 개념적 스키마 데이터 모델 구현에 매핑하는 단계.
   * physical-design phase: 파일 조직과 내부 스토리지 구조 등 물리적 기능을 정의하는 단계.
 
-## 1.6. Database Engine
+## Database Engine
 
 * Storage manager:
   * 데이터베이스는 큰 공간을 필요로 하기 때문에 중요하다.
@@ -168,7 +168,7 @@
   * 개발자가 병렬 접근의 영향을 신경쓰지 않고 높은 레벨의 추상화만 고려할 수 있도록 해준다.
   * 모던 데이터베이스 엔진들은 병렬 데이터 스토리지와 병렬 쿼리 처리에 많은 주의를 기울이고 있다.
 
-### 1.6.1. Storage Manager
+### Storage Manager
 
 * 데이터베이스에 저장된 로우레벨 데이터와 어플리케이션 프로그램, 제출된 쿼리 사이의 인터페이스를 제공하는 컴포넌트다.
 * 파일 매니저와 상호작용하며, 디스크에 저장된 데이터를 다루기 위해 다양한 DML 구문을 로우레벨 파일 시스템 명령으로 번역한다.
@@ -183,35 +183,35 @@
   * Data dictionary - 데이터베이스 구조에 대한 메타데이터 저장.
   * Indices - 데이터에 빠르게 접근할 수 있도록 해줌.
 
-### 1.6.2. The Query Processor
+### The Query Processor
 
 * DDL interpreter - DDL 구문과 데이터 딕셔너리의 레코드를 해석.
 * DML compiler - 쿼리 언어의 DML 구문을 쿼리 평가 엔진이 이해할 수 있는 로우레벨 명령으로 번역.
 * Query evaluation engine - DML 컴파일러에 의해 생성되는 로우레벨 명령을 실행.
 
-### 1.6.3. Transaction Management
+### Transaction Management
 
 * 트랜잭션은 데이터베이스 어플리케이션에서 하나의 논리적 기능을 수행하는 일련의 명령이다.
 * 트랜잭션은 원자성과 일관성의 단위이며, 데이터베이스 일관성 제약을 위반해서는 안 된다.
 * 다양한 트랜잭션을 적절히 정의하여 데이터베이스의 일관성을 유지하는 것은 프로그래머의 책임이다.
 * 내구성과 원자성은 데이터베이스 시스템의 책임이다.
 
-## 1.7. Database and Application Architecture
+## Database and Application Architecture
 
 ![](https://user-images.githubusercontent.com/6410412/115530044-61a38080-a2ce-11eb-97fb-baedf32e0e8f.png)
 
-## 1.8. Database Users and Administrators
+## Database Users and Administrators
 
 * 데이터베이스 시스템의 주요 목표는 정보를 저장하고, 검색하는 것이다.
 * 데이터베이스를 사용하는 사람들은 사용자와 관리자 둘로 나눌 수 있다.
 
-### 1.8.1. Database Users and User Interfaces
+### Database Users and User Interfaces
 
 * Naive users - 웹이나 모바일 어플리케이션 등 유저 인터페이스를 이용해 데이터베이스와 상호작용하는 비전문 사용자.
 * Application programmers - 어플리케이션 프로그램을 작성하는 전문가.
 * Sophisticated users - 프로그램을 작성하는 대신 쿼리 언어 또는 데이터 분석 도구를 사용하는 전문가.
 
-### 1.8.2. Database Administrator
+### Database Administrator
 
 * 데이터베이스 시스템을 중앙 통제하는 사람을 DBA라고 한다.
 * Schema definition - DDL을 사용해 데이터베이스 스키마를 생성.
@@ -219,7 +219,7 @@
 * Schema and physical-organization modification - 성능 향상을 위해 스키마와 물리 계층을 변경.
 * Routine maintenance - 주기적인 데이터 백업, 데이터 공간 확보, 모니터링.
 
-## 1.9. History of Database Systems
+## History of Database Systems
 
 * 1950년대, 1960년대 초반 - 자기 테이프.
 * 1960년대 후반, 1970년대 초반 - 하드디스크.
