@@ -52,11 +52,6 @@
     .footnotes > .footnotes-list > .footnote-item { list-style-position: inherit; list-style: none; }
     .footnotes > .footnotes-list > .footnote-item:before { content: "[" counter(list) "] "; counter-increment: list; }
     .footnotes > .footnotes-list > .footnote-item > p { display: inline; }
-    header #___gcse_0 .gsc-control-cse.gsc-control-cse-ko { padding: 0; }
-    header #___gcse_0 #gs_tti50 { line-height: 0; }
-    header #___gcse_0 .gsc-input { padding-right: 0; }
-    header #___gcse_0 { margin-top: 10px; max-width: 400px; }
-    header #___gcse_0 .gsc-search-button.gsc-search-button-v2 { padding: 7px 15px; }
   </style>
 </head>
 
@@ -66,13 +61,11 @@
       <a href="/">🥝wikiwikiwi</a>
       <% document.breadcrumbs.map((breadcrumb) => { %>
         <span> / </span>
-        <a href="/<%- breadcrumb %>.html"><%- breadcrumb %></a>
+        <a href="./<%- breadcrumb %>.html"><%- breadcrumb %></a>
       <% }) %>
       ― <a href="https://github.com/parksb/wikiwikiwi/commits/master/docs/<%- document.filename %>.md">history</a>,
       <a href="https://raw.githubusercontent.com/parksb/wikiwikiwi/master/docs/<%- document.filename %>.md">raw</a>
     </small>
-
-    <div class="gcse-search"></div>
   </header>
 
   <main>
@@ -80,10 +73,9 @@
   </main>
 
   <footer>
-    <small>© 2020 <a href="https://parksb.github.io/">Park Seong-beom</a></small>
+    <small>© 2021 <a href="https://parksb.github.io/">Simon Park</a></small>
   </footer>
 
   <script async src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script defer>mermaid.initialize({ startOnLoad:true });</script>
-  <script async src="https://cse.google.com/cse.js?cx=1f5399c986eb541e1"></script>
 </body>
