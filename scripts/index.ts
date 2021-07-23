@@ -12,6 +12,7 @@ import * as mdAnchor from 'markdown-it-anchor';
 import * as mdTableOfContents from 'markdown-it-table-of-contents';
 import * as mdInlineComment from 'markdown-it-inline-comments';
 import * as mdCheckbox from 'markdown-it-task-checkbox';
+import mdMermaid from 'markdown-it-mermaid';
 
 interface Document {
   title: string;
@@ -44,6 +45,7 @@ interface Document {
     },
   }).use(mdFootnote)
     .use(mdInlineComment)
+    .use(mdMermaid)
     .use(mdTex, {
       engine: katex,
       delimiters: 'gitlab',
@@ -80,8 +82,8 @@ interface Document {
       const markdown = (await fs.readFile(`${MARKDOWN_DIRECTORY_PATH}/${filename}.md`)).toString();
 
       const html = md.render(`${preContents}${markdown}`)
-        .replace(labeledLinkRegex, '<a href="/$1.html">$2</a>')
-        .replace(linkRegex, '<a href="/$1.html">$1</a>');
+        .replace(labeledLinkRegex, '<a href="./$1.html">$2</a>')
+        .replace(linkRegex, '<a href="./$1.html">$1</a>');
 
       const links = findInternalLinks(markdown);
       const children = await Promise.all(

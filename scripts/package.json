@@ -30,6 +30,7 @@
     "markdown-it-container": "^3.0.0",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-inline-comments": "^1.0.1",
+    "markdown-it-mermaid": "^0.2.5",
     "markdown-it-table-of-contents": "^0.5.1",
     "markdown-it-task-checkbox": "^1.0.6",
     "markdown-it-texmath": "^0.8.0",

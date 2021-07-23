@@ -10,6 +10,7 @@
 * [[git-rebase-onto]]
 * [[katex]]
 * [[floating-point]]
+* [[jwt]]
 
 ## Programming Languages
 
