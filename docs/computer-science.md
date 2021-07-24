@@ -11,6 +11,7 @@
 * [[katex]]
 * [[floating-point]]
 * [[jwt]]
+* [[functional-programming]]
 
 ## Programming Languages
 
