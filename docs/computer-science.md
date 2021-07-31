@@ -13,6 +13,8 @@
 * [[jwt]]
 * [[functional-programming]]
 
+## [[operating-system]]{Operating System}
+
 ## Programming Languages
 
 * [[rust]]
