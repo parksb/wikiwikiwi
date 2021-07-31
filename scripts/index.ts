@@ -12,6 +12,7 @@ import * as mdAnchor from 'markdown-it-anchor';
 import * as mdTableOfContents from 'markdown-it-table-of-contents';
 import * as mdInlineComment from 'markdown-it-inline-comments';
 import * as mdCheckbox from 'markdown-it-task-checkbox';
+import * as mdEmoji from 'markdown-it-emoji';
 import mdMermaid from 'markdown-it-mermaid';
 
 interface Document {
@@ -46,6 +47,7 @@ interface Document {
   }).use(mdFootnote)
     .use(mdInlineComment)
     .use(mdMermaid)
+    .use(mdEmoji)
     .use(mdTex, {
       engine: katex,
       delimiters: 'gitlab',

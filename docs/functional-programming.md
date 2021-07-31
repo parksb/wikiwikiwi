@@ -22,6 +22,7 @@
 ## Docs
 
 * [[higher-order-function]]
+* [[functional-type-system]]
 
 ## References
 
