@@ -1,0 +1,3 @@
+# Programming Paradigm
+
+* [[functional-programming]]

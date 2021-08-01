@@ -1,8 +1,5 @@
 # Memo
 
 * [[history-of-my-mobile-phones]]
+* [[goodbye-yyyy]]
 
-## Year in Review
-
-* [[goodbye-2019]]
-* [[goodbye-2020]]

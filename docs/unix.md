@@ -3,6 +3,8 @@
 * [[unix-command-line-tools]]
 * [[unix-shell-script]]
 * [[unix-dev-null]]
+* [[fish-shell]]
+* [[vim]]
 
 ## References
 
