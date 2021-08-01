@@ -7,6 +7,7 @@
 * [[git]]
 * [[operating-system]]
 * [[programming-language]]
+* [[programming-paradigm]]
 * [[web-framework]]
 * [[computer-organization-and-design]]
 
