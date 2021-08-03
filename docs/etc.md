@@ -2,7 +2,6 @@
 
 * [[amphibious-assault-ship]]
 * [[formula-one]]
-* [[exchange-trade-fund]]
 * [[fissured-ceiling-tile]]
 * [[oled-and-qled]]
 * [[entropy]]

@@ -56,6 +56,7 @@ interface Document {
     .use(mdAnchor)
     .use(mdTableOfContents, {
       includeLevel: [2, 3, 4],
+      format: (content: string) => content.replace(/\[\^.*\]/, ''),
     })
     .use(mdCheckbox, {
       disabled: true,
