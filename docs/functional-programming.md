@@ -24,6 +24,7 @@
 * [[higher-order-function]]
 * [[functional-type-system]]
 * [[functor]]
+* [[applicative-functor]]
 
 ## References
 

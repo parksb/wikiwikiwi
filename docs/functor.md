@@ -192,5 +192,5 @@ fmap(f compose g) == fmap(f) compose fmap(g)
   ``` 
   * `compose`는 입출력 함수이기 때문에 `Maybe`로는 체이닝이 불가능하다:
     * 그래서 `Nothing.fmap(f) compose Nothing.fmap(g)` 처럼하면 컴파일 에러가 난다.
-    * 이는 애플리케이티브 펑터를 사용해 해결해야 한다.
+    * 이는 [[applicative-functor]]{애플리케이티브 펑터}를 사용해 해결해야 한다.
     * 하지만 여기에선 `fmap`을 체이닝하는 것으로 대체한다.
