@@ -77,7 +77,7 @@ interface Document {
         ])
       ];
     };
-    
+
     const writeHtmlFromMarkdown = async (filename: string, breadcrumbs: string[]) => {
       writtenFiles.push(filename);
 
@@ -108,7 +108,7 @@ interface Document {
       SITEMAP_PATH,
       `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url><loc>${WEBSITE_DOMAIN}/</loc><lastmod>${dayjs().format('YYYY-MM-DDTHH:mm:ss')}+00:00</lastmod><changefreq>daily</changefreq><priority>1.00</priority></url>
+<url><loc>${WEBSITE_DOMAIN}/</loc><lastmod>${dayjs().format('YYYY-MM-DDTHH:mm:ss')}Z</lastmod><changefreq>daily</changefreq><priority>1.00</priority></url>
 ${sitemapUrls.join('\n')}
 </urlset>`,
     );
