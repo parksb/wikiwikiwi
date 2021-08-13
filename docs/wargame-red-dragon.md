@@ -24,6 +24,10 @@
 * SIHP (Anti-Ship): 대함무기.
 * CLUS (Cluster): 집속탄. 일정고도에서 자탄이 뿌려짐. 보병에게는 피해를 입히지 않음.
 
+## Tactics
+
+* [[wrd-tactics-recon]]
+
 ## Decks
 
 * [[wrd-deck-blue-dragon]]
