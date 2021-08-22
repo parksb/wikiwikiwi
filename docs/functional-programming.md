@@ -25,6 +25,7 @@
 * [[functional-type-system]]
 * [[functor]]
 * [[applicative-functor]]
+* [[monoid]]
 
 ## References
 
