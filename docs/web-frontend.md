@@ -1,6 +1,5 @@
-# Web Framework
+# Web Frontend
 
-* [[spring]]
 * [[react-functional-component-and-class-component]]
 * [[react-hooks]]
 * [[svelte]]

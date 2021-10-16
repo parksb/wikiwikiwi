@@ -8,7 +8,8 @@
 * [[operating-system]]
 * [[programming-language]]
 * [[programming-paradigm]]
-* [[web-framework]]
+* [[web-frontend]]
+* [[web-backend]]
 * [[computer-organization-and-design]]
 
 ## Notes
