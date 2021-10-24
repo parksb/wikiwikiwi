@@ -25,6 +25,7 @@ interface Monad<out A> : Functor<A> {
   * 중요한 것은 `flatMap`을 이용하면 모나드 컨텍스트에 있는 값을 일반값처럼 다룰 수 있다는 것.
 * `pure`: 입력받은 값을 모나드 컨텍스트에 그대로 넣어서 반환한다. 애플리케이티브 펑터의 `pure`와 동일하다.
 * `leadTo`: 기존 컨텍스트 `Monad<A>`의 값 `A`를 무시하고, 입력받은 `Monad<B>`로 컨텍스트를 이어갈 때 사용하는 함수.
+* `ApplicativeFunctor`가 아닌 `Functor`를 상속한 이유는 이전에 [[applicative-functor]]{애플리케이티브 펑터}를 확장 함수로 구현했기 때문이다.
 
 ## 메이비 모나드
 
@@ -161,3 +162,7 @@ m flatMap pure = m
 * 입출력 컨텍스트를 IO 모나드로 분리해서 관리하고, 모나드 내부에서 일어나는 작업이 외부에 영향을 줄 수 없도록 할 수 있다.
 * 코틀린은 입출력과 비입출력 영역을 분리하도록 강제하지 않으므로, 프로그래머가 최대한 분리해서 작성해야 한다.
 
+## References
+
+* [서재원, "3분 모나드, 2020.](https://overcurried.com/3%EB%B6%84%20%EB%AA%A8%EB%82%98%EB%93%9C/)
+* [엑스티, "모나드 괴담", 2015.](https://xtendo.org/ko/monad)

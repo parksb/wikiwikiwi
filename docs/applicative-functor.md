@@ -90,6 +90,23 @@ object ApplicativeNothing : ApplicativeMaybe<kotlin.Nothing>() {
       apply ApplicativeJust(10)
       apply ApplicativeJust(20) // ApplicativeJust(200)
     ```
+  * 상속으로 펑터를 확장해 애플리케이티브 펑터를 만드는 대신 확장 함수를 사용할 수도 있다:
+    ```kotlin
+    sealed class Maybe<out A> : Functor<A> {
+      abstract override fun toString(): String
+      
+      abstract override fun <B> fmap(f: (A) -> B): Maybe<B>
+      
+      companion object
+    }
+
+    fun <A> Maybe.Companion.pure(value: A) = Just(value)
+
+    infix fun <A, B> Maybe<(A) -> B>.apply(f: Maybe<A>): Maybe<B> = when (this) {
+      is Just -> f.fmap(value)
+      is Nothing -> Nothing
+    }
+    ```
 
 ## 애플리케이티브 펑터의 법칙
 
