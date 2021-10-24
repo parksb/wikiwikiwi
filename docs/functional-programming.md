@@ -26,6 +26,7 @@
 * [[functor]]
 * [[applicative-functor]]
 * [[monoid]]
+* [[monad]]
 
 ## References
 
