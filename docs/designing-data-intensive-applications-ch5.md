@@ -107,6 +107,7 @@
   * 값을 병합한다. 사전순으로 정렬해 병합한다면 위 그림에서는 제목이 "B/C"가 된다.
   * 명시적 데이터 구조에 충돌을 기록해 모든 정보를 기록한다.
 * 사용자 정의 충돌 해소 로직: 대부분의 다중 리더 복제 도구는 애플리케이션 코드를 사용해 충돌 해소 로직을 작성한다.
+* 자동 충돌 해소 로직: CRDT(onflict-free replicated datatype)[^martin-keppmann], Git과 같은 three-way 병합 함수, OP(operational transform)[^josephg] 등.
 
 ### 다중 리더 복제 토폴로지
 
@@ -125,7 +126,8 @@
 ## 리더 없는 복제
 
 * 리더 없이 모든 레플리카가 쓰기를 직접 처리하는 복제 시스템.
-* 초기 복제 데이터 시스템이 이러했으나, RDB가 우세하며 잊혀졌다. 그러다 이후 아마존이 다이나모 시스템에 사용하며 다시 유행했다.
+* 초기 복제 데이터 시스템이 이러했으나, RDB가 우세하며 잊혀졌다.
+* 이후 아마존이 다이나모 시스템에 사용하며 다시 유행했다. 리악, 카산드라, 볼드모트가 리더 없는 복제 모델을 사용하며, 이러한 데이터베이스를 다이나모 스타일이라고 한다.
 
 ### 노드가 다운됐을 때 데이터베이스에 쓰기
 
@@ -134,7 +136,9 @@
 * 리더가 없다면 레플리카 하나에 문제가 생겨도 장애 복구가 필요하지 않다.
 * 레플리카 3이 오프라인이 됐지만 다른 레플리카에서 쓰기 처리를 하므로 문제가 되지 않는다.
 * 하지만 이후 레플리카 3이 복구된 시점에 데이터는 변경이 누락되어 오래되었을 수 있다.
-* 이를 해결하기 위해 클라이언트는 여러 노드에 읽기 질의를 보내고, 응답 중 버전 숫자가 가장 최신인 데이터를 선택한다.
+* 다이나모 스타일 데이터스토어는 이를 해결하기 위해 두 가지 방법을 사용한다:
+  * 읽기 복구: 클라이언트가 여러 노드에 읽기 질의를 병렬적으로 보내고, 응답 중 버전 숫자가 가장 최신인 데이터를 선택한다. 이때 오래된 데이터는 새롭게 업데이트한다.
+  * 안티 엔트로피 처리: 백그라운드 프로세스를 두고 노드 사이 데이터 차이를 지속적으로 찾아 오래된 데이터를 업데이트한다.
 
 ### 읽기와 쓰기를 위한 정족수
 
@@ -200,14 +204,24 @@
 ## Memo
 
 * 안티 엔트로피?
-* Git three-way merge function?
-* 협업 도구는 충돌 해서는 어떻게 할까? 운영변환?
-* 동시성, 시각, 상대성.
-* version vector, dotted version vector.
-* CRDT?
+  * [[entropy]]{엔트로피}는 쉽게 표현하면 '무질서도', '무질서한 정도'를 측정하는 물리학적 양. 
+  * 시스템의 엔트로피는 시간이 지남에 따라 점점 커진다.
+  * 데이터베이스에서 안티 엔트로피는 노드 간의 복제본을 동기화하고 최신 상태를 유지하는 것을 말한다.
+* CRDT? OT?
+  * CRDT: set, map, ordered list 데이터 타입을 사용해 자동으로 충돌을 해소하기 위한 자료 구조. 
+  * OT: 모든 변경에 대한 시간순 목록을 저장. 중앙 집중식 서버나 데이터베이스가 필요하다.
+  * CRDT는 중앙 데이터베이스 없이 실시간 편집이 가능하고, 속도, 용량, 기능, 복잡도 모두 개선됨.
+  * [피그마의 동시 협업 기능도 CRDT 방식으로 구현했다.](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
+* 동시성, 시각, 상대성:
+  * 정보가 빛의 속도보다 빠를 수 없기 때문에 이벤트간 시간차가 빛의 속도보다 짧으면 두 이벤트는 서로 영향을 미칠 수 없다. 
 
 ## References
 
 * [오길원, "MariaDB Binlog을 이용한 변경사항 추적", 리디주식회사, 2017.](https://ridicorp.com/story/binlog-collector/)
+* [Evan Wallace, "How Figma's multiplayer technology works", Figma, 2019](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
+* [senna, "CRDT vs OT", 채널톡, 2021.](https://channel.io/ko/blog/crdt_vs_ot)
 
+[^martin-keppmann]: [Martin Kleppmann, Alastair R. Beresford, "A Conflict-Free Replicated JSON Datatype", 2016.](https://arxiv.org/pdf/1608.03960.pdf)
+[^josephg]: [Joseph Gentle, "I was wrong. CRDTs are the future", 2020.](https://josephg.com/blog/crdts-are-the-future/)
 [^leslie-lamport]: [Leslie Lamport, "Time, Clocks, and the Ordering of Events in a Distributed System", Communications of the ACM, 1978.](https://lamport.azurewebsites.net/pubs/time-clocks.pdf)
+
