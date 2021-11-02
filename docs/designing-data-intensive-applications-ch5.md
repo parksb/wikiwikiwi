@@ -1,9 +1,9 @@
 # 복제
 
 * 복제란 네트워크로 연결된 여러 장비에 동일한 데이터의 복사본을 유지한다는 의미:
-  * 데이터와 사용자의 거리를 지리적으로 가깝게 만들어 지연 시간을 줄인다.
-  * 시스템 일부에 장애가 발생해도 지속적으로 동작할 수 있게 만들어 가용성을 높인다.
-  * 읽기 질의를 제공하는 장비의 수를 확장해 읽기 처리량을 높인다.
+  * 확장성: 읽기 질의를 제공하는 장비의 수를 확장해 읽기 처리량을 높인다.
+  * 지연시간: 데이터와 사용자의 거리를 지리적으로 가깝게 만들어 지연 시간을 줄인다.
+  * 내결함성/고가용성: 시스템 일부에 장애가 발생해도 지속적으로 동작할 수 있게 만들어 가용성을 높인다.
 * 복제된 데이터가 시간이 지나도 변경되지 않는다면 문제가 없다:
   * 복제의 모든 어려움은 복제된 데이터의 변경 처리에 있다.
   * 거의 모든 분산 데이터베이스가 단일 리더, 다중 리더, 리더 없는 복제 알고리즘 중 하나를 사용한다.
@@ -107,7 +107,7 @@
   * 값을 병합한다. 사전순으로 정렬해 병합한다면 위 그림에서는 제목이 "B/C"가 된다.
   * 명시적 데이터 구조에 충돌을 기록해 모든 정보를 기록한다.
 * 사용자 정의 충돌 해소 로직: 대부분의 다중 리더 복제 도구는 애플리케이션 코드를 사용해 충돌 해소 로직을 작성한다.
-* 자동 충돌 해소 로직: CRDT(onflict-free replicated datatype)[^martin-keppmann], Git과 같은 three-way 병합 함수, OP(operational transform)[^josephg] 등.
+* 자동 충돌 해소 로직: CRDT(onflict-free replicated datatype)[^martin-kleppmann], Git과 같은 three-way 병합 함수, OP(operational transform)[^josephg] 등.
 
 ### 다중 리더 복제 토폴로지
 
@@ -203,17 +203,27 @@
 
 ## Memo
 
-* 안티 엔트로피?
-  * [[entropy]]{엔트로피}는 쉽게 표현하면 '무질서도', '무질서한 정도'를 측정하는 물리학적 양. 
-  * 시스템의 엔트로피는 시간이 지남에 따라 점점 커진다.
-  * 데이터베이스에서 안티 엔트로피는 노드 간의 복제본을 동기화하고 최신 상태를 유지하는 것을 말한다.
-* CRDT? OT?
-  * CRDT: set, map, ordered list 데이터 타입을 사용해 자동으로 충돌을 해소하기 위한 자료 구조. 
-  * OT: 모든 변경에 대한 시간순 목록을 저장. 중앙 집중식 서버나 데이터베이스가 필요하다.
-  * CRDT는 중앙 데이터베이스 없이 실시간 편집이 가능하고, 속도, 용량, 기능, 복잡도 모두 개선됨.
-  * [피그마의 동시 협업 기능도 CRDT 방식으로 구현했다.](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
-* 동시성, 시각, 상대성:
-  * 정보가 빛의 속도보다 빠를 수 없기 때문에 이벤트간 시간차가 빛의 속도보다 짧으면 두 이벤트는 서로 영향을 미칠 수 없다. 
+### 안티 엔트로피
+
+* [[entropy]]{엔트로피}는 쉽게 표현하면 '무질서도', '무질서한 정도'를 측정하는 물리학적 양. 
+* 시스템의 엔트로피는 시간이 지남에 따라 점점 커진다.
+* 데이터베이스에서 안티 엔트로피는 노드 간의 복제본을 동기화하고 최신 상태를 유지하는 것을 말한다.
+
+### OT / CRDT
+
+* OT: 모든 변경에 대한 시간순 목록을 저장. 중앙 집중식 서버나 데이터베이스가 필요하다.
+* CRDT: set, map, ordered list, counter 등의 데이터 타입을 사용해 자동으로 충돌을 해소하기 위한 자료 구조. 
+* CRDT는 중앙 데이터베이스 없이 실시간 편집이 가능하고, 속도, 용량, 기능, 복잡도 모두 개선됨.[^josephg]
+* A Conflict-Free Replicated JSON Datatype:[^martin-kleppmann]
+  * JSON 데이터 모델을 이용한 CRDT. 모든 쓰기를 누락시키지 않고 반영하는 것이 목적.
+  * 중앙 서버 없이 P2P 네트워크를 통해서 동작할 수 있는 매커니즘.
+  * 변경 사항을 병합하는 방식으로 동작한다. 페이퍼에 동일 키에 대한 변경, 삭제, 리스트에 대한 변경 등 구체적인 예시가 있음.
+  * 하지만 Figure 6처럼 모든 것을 반영하지 않고 어떤 쓰기는 버려야 하는 상황도 있다. (이 페이퍼에서는 다루지 않음.)
+* [피그마의 동시 협업 기능도 CRDT 방식으로 구현했다.](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
+
+### 동시성, 시각, 상대성
+
+* 정보가 빛의 속도보다 빠를 수 없기 때문에 이벤트간 시간차가 빛의 속도보다 짧으면 두 이벤트는 서로 영향을 미칠 수 없다. 
 
 ## References
 
@@ -221,7 +231,7 @@
 * [Evan Wallace, "How Figma's multiplayer technology works", Figma, 2019](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
 * [senna, "CRDT vs OT", 채널톡, 2021.](https://channel.io/ko/blog/crdt_vs_ot)
 
-[^martin-keppmann]: [Martin Kleppmann, Alastair R. Beresford, "A Conflict-Free Replicated JSON Datatype", 2016.](https://arxiv.org/pdf/1608.03960.pdf)
+[^martin-kleppmann]: [Martin Kleppmann, Alastair R. Beresford, "A Conflict-Free Replicated JSON Datatype", 2016.](https://arxiv.org/pdf/1608.03960.pdf)
 [^josephg]: [Joseph Gentle, "I was wrong. CRDTs are the future", 2020.](https://josephg.com/blog/crdts-are-the-future/)
 [^leslie-lamport]: [Leslie Lamport, "Time, Clocks, and the Ordering of Events in a Distributed System", Communications of the ACM, 1978.](https://lamport.azurewebsites.net/pubs/time-clocks.pdf)
 
