@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8" />
-  <title><%- document.title %></title>
+  <title>Search</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#ffffff">
-  <link rel="canonical" href="https://wikiwikiwi.vercel.app/<%- document.filename %>.html" />
 
-  <meta property="og:title" content="Wikiwikiwi - <%- document.title %>">
-  <meta property="og:image" content="https://dummyimage.com/1200x675/bbca4e/202020.jpg&text=<%- document.filename %>">
+  <meta property="og:title" content="Wikiwikiwi - Search">
+  <meta property="og:image" content="https://dummyimage.com/1200x675/bbca4e/202020.jpg&text=Wikiwikiwi">
 
-  <meta name="twitter:title" content="Wikiwikiwi - <%- document.title %>">
-  <meta name="twitter:image" content="https://dummyimage.com/1200x675/bbca4e/202020.jpg&text=<%- document.filename %>">
+  <meta name="twitter:title" content="Wikiwikiwi - Search">
+  <meta name="twitter:image" content="https://dummyimage.com/1200x675/bbca4e/202020.jpg&text=Wikiwikiwi">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" as="style">
@@ -25,21 +23,18 @@
 
   <link rel="stylesheet" href="assets/bundle.min.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥝</text></svg>">
-  
-  <link rel="preload" href="index.css" as="style">
-  <link rel="stylesheet" href="index.css"> 
-</head>
 
+  <link rel="preload" href="index.css" as="style">
+  <link  rel="stylesheet" href="index.css">
+</head>
 <body>
-  <header role="navigation">
+   <header role="navigation">
     <small>
       <a href="index.html">🥝wikiwikiwi</a>
-      <% document.breadcrumbs.map((breadcrumb) => { %>
         <span> ＞ </span>
-        <a href="<%- breadcrumb %>.html"><%- breadcrumb %></a>
-      <% }) %>
-      ― <a href="https://github.com/parksb/wikiwikiwi/commits/master/docs/<%- document.filename %>.md">history</a> ·
-      <a href="https://raw.githubusercontent.com/parksb/wikiwikiwi/master/docs/<%- document.filename %>.md">raw</a>
+        <a href="search.html">search</a>
+      ― <a href="https://github.com/parksb/wikiwikiwi/commits/master/scripts/search.ejs">history</a> ·
+      <a href="https://raw.githubusercontent.com/parksb/wikiwikiwi/master/scripts/search.ejs">raw</a>
     </small>
     <form id="search-form">
       <input id="search-text-field" type="search" />
@@ -48,28 +43,59 @@
   </header>
 
   <main>
-    <article><%- document.html %></article>
+    <h1>Search</h1>
+    <ul></ul>
   </main>
 
   <footer>
     <small>© 2021 <a href="https://parksb.github.io/">Simon Park</a></small>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad:true });</script>
+  </footer> 
+  
   <script>
-    let searchWord = '';
-    const searchTextField = document.querySelector('#search-text-field');
-    const searchButton = document.querySelector('#search-button');
+    const urlParams = new URLSearchParams(window.location.search);
+    let searchWord = urlParams.get('q');
+    
     const searchForm = document.querySelector('#search-form');
+    const searchTextField = document.querySelector('#search-text-field');
+    searchTextField.value = searchWord;
+    const searchButton = document.querySelector('#search-button');
     searchButton.addEventListener('click', event => {
       searchWord = searchTextField.value;
       if (searchWord.trim().length > 0) {
         location.href = `search.html?q=${searchWord}`;
       }
-    });
+    });   
     searchForm.addEventListener('submit', event => {
       event.preventDefault();
     });
   </script>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+  <script>
+    const documents = <%- document %>;
+
+    const idx = lunr(function () {
+      this.ref('filename');
+      this.field('title');
+      this.field('text');
+
+      documents.forEach(function (doc) {
+        this.add(doc);
+      }, this);
+    });   
+
+    const searchResult = idx.search(searchWord);
+    
+    const resultList = document.querySelector('main > ul')
+    searchResult.forEach((item) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      const title = document.createTextNode(item.ref);
+      a.href = `${item.ref}.html`;
+      a.appendChild(title);
+      li.appendChild(a);
+
+      resultList.appendChild(li);
+    });
+  </script>
 </body>
+</html>

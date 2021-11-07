@@ -23,11 +23,18 @@ interface Document {
   children: Document[];
 }
 
+interface SearchIndex {
+  title: string;
+  filename: string; // without extension
+  text: string;
+}
+
 (async () => {
   const WEBSITE_DOMAIN = 'https://wikiwikiwi.vercel.app';
   const MARKDOWN_DIRECTORY_PATH: string = path.join(__dirname, '../docs');
   const DIST_DIRECTORY_PATH: string = path.join(__dirname, '../build');
   const TEMPLATE_FILE_PATH: Buffer = await fs.readFile(path.join(__dirname, './index.ejs'));
+  const SEARCH_TEMPLATE_FILE_PATH: Buffer = await fs.readFile(path.join(__dirname, './search.ejs'));
   const SITEMAP_PATH = `${DIST_DIRECTORY_PATH}/sitemap.xml`;
 
   const md: MarkdownIt = new MarkdownIt({
@@ -64,6 +71,7 @@ interface Document {
 
     const writtenFiles: string[] = [];
     const sitemapUrls: string[] = [];
+    const searchIndices: SearchIndex[] =[];
 
     // https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/createLink.html
     const linkRegex = /\[\[(.+?)\]\]/g;
@@ -96,6 +104,9 @@ interface Document {
 
       const document: Document = { title: markdown.match(/^#\s.*/)[0].replace(/^#\s/, ''), filename, html, breadcrumbs, children };
 
+      const searchIndex: SearchIndex = { title: document.title, filename, text: markdown };
+      searchIndices.push(searchIndex);
+
       fs.writeFile(`${DIST_DIRECTORY_PATH}/${filename}.html`, ejs.render(String(TEMPLATE_FILE_PATH), { document }));
       sitemapUrls.push(`<url><loc>${WEBSITE_DOMAIN}/${filename}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
 
@@ -103,6 +114,8 @@ interface Document {
     };
 
     await writeHtmlFromMarkdown('index', []);
+
+    fs.writeFile(`${DIST_DIRECTORY_PATH}/search.html`, ejs.render(String(SEARCH_TEMPLATE_FILE_PATH), { document: JSON.stringify(searchIndices) }));
 
     fs.writeFile(
       SITEMAP_PATH,
