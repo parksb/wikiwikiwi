@@ -41,8 +41,8 @@
       ― <a href="https://github.com/parksb/wikiwikiwi/commits/master/docs/<%- document.filename %>.md">history</a> ·
       <a href="https://raw.githubusercontent.com/parksb/wikiwikiwi/master/docs/<%- document.filename %>.md">raw</a>
     </small>
-    <form id="search-form">
-      <input id="search-text-field" type="search" />
+    <form id="search-form" method="get" action="search.html">
+      <input id="search-text-field" type="search" name="q" />
       <button id="search-button" type="submit">👀</button>
     </form>
   </header>
@@ -57,19 +57,4 @@
 
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>mermaid.initialize({ startOnLoad:true });</script>
-  <script>
-    let searchWord = '';
-    const searchTextField = document.querySelector('#search-text-field');
-    const searchButton = document.querySelector('#search-button');
-    const searchForm = document.querySelector('#search-form');
-    searchButton.addEventListener('click', event => {
-      searchWord = searchTextField.value;
-      if (searchWord.trim().length > 0) {
-        location.href = `search.html?q=${searchWord}`;
-      }
-    });
-    searchForm.addEventListener('submit', event => {
-      event.preventDefault();
-    });
-  </script>
 </body>

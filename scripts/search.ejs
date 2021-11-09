@@ -36,8 +36,8 @@
       ― <a href="https://github.com/parksb/wikiwikiwi/commits/master/scripts/search.ejs">history</a> ·
       <a href="https://raw.githubusercontent.com/parksb/wikiwikiwi/master/scripts/search.ejs">raw</a>
     </small>
-    <form id="search-form">
-      <input id="search-text-field" type="search" />
+    <form id="search-form" method="get" action="search.html">
+      <input id="search-text-field" type="search" name="q" />
       <button id="search-button" type="submit">👀</button>
     </form>
   </header>
@@ -55,19 +55,8 @@
     const urlParams = new URLSearchParams(window.location.search);
     let searchWord = urlParams.get('q');
     
-    const searchForm = document.querySelector('#search-form');
     const searchTextField = document.querySelector('#search-text-field');
     searchTextField.value = searchWord;
-    const searchButton = document.querySelector('#search-button');
-    searchButton.addEventListener('click', event => {
-      searchWord = searchTextField.value;
-      if (searchWord.trim().length > 0) {
-        location.href = `search.html?q=${searchWord}`;
-      }
-    });   
-    searchForm.addEventListener('submit', event => {
-      event.preventDefault();
-    });
   </script>
   <script src="https://unpkg.com/lunr/lunr.js"></script>
   <script>
