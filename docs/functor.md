@@ -65,7 +65,7 @@ sealed class Either<out L, out R> : Functor<R> {
 ```
 ```kotlin
 data class Right<out R>(val value: R): Either<Nothing, R>() {
-  override fun <R2> fmap(f: (R) -> R2): Ether<L, R2> = Right(f(value))
+  override fun <R2> fmap(f: (R) -> R2): Ether<Nothing, R2> = Right(f(value))
 }
 ```
 ```kotlin
