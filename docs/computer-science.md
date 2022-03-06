@@ -13,6 +13,11 @@
 * [[computer-organization-and-design]]
 * [[data-structure]]
 
+## Books
+
+* [[functional-programming-in-kotlin]]
+* [[the-pragmatic-programmer]]
+
 ## Notes
 
 * [[npm-distribution]]
