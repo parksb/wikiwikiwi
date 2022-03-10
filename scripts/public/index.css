@@ -26,4 +26,6 @@ code { font-family: 'Consolas', 'Monaco', 'Ubuntu Mono', 'Andale Mono', monospac
 .footnotes > .footnotes-list > .footnote-item > p { display: inline; }
 #search-form { width: 100%; max-width: 400px; margin-top: 10px; font-size: 16px; }
 #search-text-field { width: 80%; }
-#search-button { width: 10%; cursor: pointer; }
+#search-button { border: none; background-color: #ffffff; cursor: pointer; }
+#search-button:before { content: '🔍'; }
+#search-button:hover:before { content: '🔎'; }
