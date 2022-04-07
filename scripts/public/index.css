@@ -8,6 +8,7 @@ ol, ul { padding-left: 2em; }
 ol ol, ol ul, ul ol, ul ul { margin: 0; }
 ul > li, ol > li { line-height: 1.7; }
 a { color: #0366d6; text-decoration: none; }
+a.external:after { content: '↗'; }
 a:hover { outline-width: 0; text-decoration: underline; }
 small { font-size: 85%; color: #6a737d; font-weight: normal; }
 h1 > code, h2 > code, li > code,  p > code { padding: .2em .4em; margin: 0; font-size: 90%; background-color: #f6f8fa; }

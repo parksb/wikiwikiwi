@@ -14,6 +14,7 @@ import * as mdInlineComment from 'markdown-it-inline-comments';
 import * as mdCheckbox from 'markdown-it-task-checkbox';
 import * as mdEmoji from 'markdown-it-emoji';
 import mdMermaid from 'markdown-it-mermaid';
+import * as mdExternalLink from 'markdown-it-external-links';
 
 interface Document {
   title: string;
@@ -67,6 +68,10 @@ interface SearchIndex {
     })
     .use(mdCheckbox, {
       disabled: true,
+    })
+    .use(mdExternalLink, {
+      externalClassName: 'external',
+      internalDomains: ['wikiwikiwi.vercel.app'],
     });
 
     const writtenFiles: string[] = [];
