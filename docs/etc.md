@@ -11,7 +11,4 @@
 * [[how-to-grow-cactus]]
 * [[oral-hygiene]]
 * [[wargame-red-dragon]]
-* [[taebaek-sanmaeck]]
-* [[what-did-architecture-do]]
-* [[sapiens]]
 * [[rip-flash]]
