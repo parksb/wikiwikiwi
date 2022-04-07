@@ -25,6 +25,7 @@
 * [[rust-oop]]
 * [[rust-module]]
 * [[rust-lifetime]]
+* [[rust-concurrency]]
 
 ## References
 
