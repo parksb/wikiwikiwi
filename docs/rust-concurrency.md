@@ -131,8 +131,35 @@
   }
   ```
 
+### Future
+
+- `Future` 트레잇은 러스트 비동기 프로그래밍의 핵심.
+- 대략 이렇게 생겼다:
+  ```rust
+  trait SimpleFuture {
+      type Output;
+      fn poll(&mut self, wake: fn()) -> Poll<Self::Output>;
+  }
+  
+  enum Poll<T> {
+      Ready(T),
+      Pending,
+  }
+  ```
+  - `poll`: future가 완료됐으면 `Poll::Ready(result)`를, 아니면 `Poll::Pending`을 반환한다.
+  - `Poll::Pending` 반환 후 future가 더 진행할 준비가 되면 `wake` 함수를 호출한다.
+  - `wake` 함수가 호출되면 실행자가 다시 `poll`을 호출함으로써 future를 더 진행시킨다.
+
+### 자바스크립트와의 차이
+
+- 자바스크립트는 async-first 언어다.
+- 두 가지 면에서 자바스크립트의 promise와 러스트의 futures는 다르다:
+  1. promise는 생성 즉시 스케줄된다. 반면, futures는 `await`됐을 때만 스케줄된다.
+  2. 모든 promies는 fallible하다. 반면, futures는 infallible할 수 있다.
+
 ## References
 
 - https://rust-lang.github.io/async-book/
 - https://doc.rust-lang.org/book/ch16-00-concurrency.html
 - https://tokio.rs/tokio/tutorial/hello-tokio
+- https://blog.yoshuawuyts.com/futures-concurrency/
