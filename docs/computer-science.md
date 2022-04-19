@@ -12,6 +12,7 @@
 * [[web-backend]]
 * [[computer-organization-and-design]]
 * [[data-structure]]
+* [[concurrent-programming]]
 
 ## Books
 
