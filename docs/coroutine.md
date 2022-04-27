@@ -11,13 +11,13 @@
       print "World"
       yield to B
     }
-    
+
     coroutine B {
       print "Foo"
       yield to A
       print "Bar"
     }
-    
+
     yield to A
     ```
     ```
@@ -26,7 +26,7 @@
     World
     Bar
     ```
-    * 일반적인 함수 호출은 caller와 callee가 명확하지만, 대칭 코루틴에서는 서로 동등한 대칭 관계가 된다. 
+    * 일반적인 함수 호출은 caller와 callee가 명확하지만, 대칭 코루틴에서는 서로 동등한 대칭 관계가 된다.
   * 비대칭 코루틴: 함수의 중단 지점에서 제어권을 부여했던 지점으로 되돌아감.
     ```python
     def hello():
@@ -39,7 +39,7 @@
     h.__next__() # 'World'
     h.__next__()
     ```
-    * 파이썬에서는 비대칭 코루틴을 제너레이터라고 부른다. 
+    * 파이썬에서는 비대칭 코루틴을 제너레이터라고 부른다.
 
 ## References
 
