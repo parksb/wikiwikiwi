@@ -254,6 +254,32 @@ fn main() {
 }
 ```
 
+* `std::sync::Arc`: Atomically Reference Counted
+  * 스레드 세이프한 레퍼런스 카운팅 포인터. `Rc` 타입과 다르게 아토믹하게 명령을 수행한다.
+  * `Arc<T>` 타입은 타입 `T`의 값에 대한 공유된 오너십을 제공한다. (힙 메모리에 할당된다.)
+  * `clone`을 호출하면 같은 힙 메모리 주소를 가리키는 새로운 `Arc` 인스턴스를 만들어낸다:
+    ```rust
+    let foo = Arc::new(vec![1.0, 2.0, 3.0]);
+
+    let a = foo.clone();
+    let b = Arc::clone(&foo); // `foo.clone()`과 동일하다.
+
+    // `a`, `b`, `foo`는 모두 같은 메모리 주소를 가리키는 `Arc` 인스턴스다.
+    ```
+  * 스레드 사이에 데이터를 공유하고 싶을 때 `Arc`를 사용한다:
+    ```rust
+    let apple = Arc::new("the same apple");
+
+    for _ in 0..10 {
+        let apple = Arc::clone(&apple);
+
+        thread::spawn(move || {
+            println!("{:?}", apple);
+        });
+    }
+    ```
+* `Rc` 타입에 대한 자세한 내용은 [[trpl-smart-pointers]] 참고.
+
 ## Barrier synchronization
 
 * 특정 지점에 도달한 프로세스가 N개 이상일 때 배리어를 벗어나 동기 처리를 수행하는 기법.
