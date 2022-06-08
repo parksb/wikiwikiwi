@@ -8,6 +8,7 @@
 * [[how-to-read-a-paper]]
 * [[how-to-speak]]
 * [[ieee-citation-style]]
+* [[wikiwikiwi-citation-style]]
 * [[how-to-grow-cactus]]
 * [[oral-hygiene]]
 * [[wargame-red-dragon]]
