@@ -1,18 +1,28 @@
 # 모나드
 
-* [[functor]]{펑터}는 `(A) -> B`, `(B) -> C` 함수를 합성해 `(A) -> C` 함수를 만든다. 하지만 펑터는 `Just({ x -> x * 2 })`와 `Just(5)` 같이 함수와 값이 컨텍스트 안에 있을 때는 사용할 수 없다. 
+* [[functor]]{펑터}는 `(A) -> B`, `(B) -> C` 함수를 합성해 `(A) -> C` 함수를 만든다. 하지만 펑터는 `Just({ x -> x * 2 })`와 `Just(5)` 같이 함수와 값이 컨텍스트 안에 있을 때는 사용할 수 없다.
 * [[applicative-functor]]{애플리케이티브 펑터}는 `apply` 함수를 이용해 문제를 해결한다. `Just({ x -> x * 2 })`에 `Just(5)`를 적용해 `Just10)`을 얻을 수 있다.
 * 반대로 `Just(5)`를 `{ x -> x * 2 }` 함수의 입력으로 넣으려면 어떻게 해야할까? 즉, 어떤 값이 포함된 컨텍스트에 대해 일반적인 값을 받아서 컨텍스트를 반환하는 함수의 입력으로 넣으려면 어떻게 해야할까?
 * 모나드는 `flatMap`이라는 함수를 제공하는 펑터이자 애플리케이티브 펑터이다. 따라서 모나드를 애플리케이티브 펑터의 확장으로 볼 수도 있다.
 
 ## 모나드 타입 클래스
 
+```haskell
+class Monad m where
+  return :: a -> m a
+
+  (>>=) :: m a -> (a -> m b) -> m b
+
+  (>>)  :: m a -> m b -> m b
+  m1 >> m2 = m1 >>= \_ -> m2
+```
+
 ```kotlin
 interface Monad<out A> : Functor<A> {
   fun <V> pure(value: V): Monad<V>
-  
+
   override fun <B> fmap(f: (A) -> B): Monad<B> = flatMap { a -> pure(f(a)) }
-  
+
   infix fun <B> flatMap(f: (A) -> Monad<B>): Monad<B>
 
   infix fun <B> leadTo(m: Monad<B>): Monad<B> = flatMap { m }
@@ -34,11 +44,11 @@ sealed class Maybe<out A> : Monad<A> {
   companion object {
     fun <V> pure(value: V) : Maybe<V> = Just(0).pure(value)
   }
-  
+
   override fun <V> pure(value: V): Maybe<V> = Just(value)
-  
+
   override fun <B> fmap(f: (A) -> B): Maybe<B> = supre.fmap(f) as Maybe<B>
-  
+
   override infix fun <B> flatMap(f: (A) -> Monad<B>): Maybe<B> = when (this) {
     is Just -> try { f(value) as Maybe<B> } catch (e: ClassCastException) { Nothing }
     is Nothing -> Nothing
@@ -137,7 +147,7 @@ m flatMap pure = m
   val f = { a: Int -> Just(a * 2) }
   val g = { a: Int -> Just(a + 1) }
   val m = Just(10)
-  
+
   (m flatMap f) flatMap g == m flatMap { a -> f(a) flatMap g } // true
   ```
 
@@ -150,15 +160,15 @@ m flatMap pure = m
   ```
   ```kotlin
   f compose identity = f
-  ``` 
+  ```
   ```kotlin
   (f compose g) compose h = f compose (g compose h)
-  ```  
+  ```
 
 ## IO 모나드
 
 * 입출력은 외부와의 연결이 불가피하기 때문에 필연적으로 데이터의 순수성을 깬다.
-* 하스켈의 경우 프로그램의 순수한 영역과 상태를 변경해야 하는 사이드 이펙트 영역을 완전히 분리하는 방법으로 입출력을 구현했다. 
+* 하스켈의 경우 프로그램의 순수한 영역과 상태를 변경해야 하는 사이드 이펙트 영역을 완전히 분리하는 방법으로 입출력을 구현했다.
 * 입출력 컨텍스트를 IO 모나드로 분리해서 관리하고, 모나드 내부에서 일어나는 작업이 외부에 영향을 줄 수 없도록 할 수 있다.
 * 코틀린은 입출력과 비입출력 영역을 분리하도록 강제하지 않으므로, 프로그래머가 최대한 분리해서 작성해야 한다.
 

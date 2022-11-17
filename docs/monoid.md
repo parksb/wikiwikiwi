@@ -7,10 +7,19 @@
 
 ## 모노이드 타입 클래스
 
+```haskell
+class Monoid m where
+  mempty  :: m
+  mappend :: m -> m -> m
+
+  mconcat :: [m] -> m
+  mconcat = foldr mappend mempty
+```
+
 ```kotlin
 interface Monoid<T> {
   fun mempty(): T
-  
+
   fun mappend(m1: T, m2: T): T
 }
 ```
@@ -63,7 +72,7 @@ interface Monoid<T> {
 object MaybeMonoid {
   fun <T> monoid(inValue: Monoid<T>) = object : Monoid<Maybe<T>> {
     override fun mempty(): Maybe<T> = Nothing
-    
+
     overrid fun mappend(m1: Maybe<T>, m2: Maybe<T>): Maybe<T> = when {
       m1 is Nothing -> m2
       m2 is Nothing -> m1

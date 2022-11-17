@@ -1,5 +1,10 @@
 # 펑터
 
+```haskell
+class Functor f where
+  fmap :: (a -> b) -> f a -> f b
+```
+
 ```kotlin
 interface Functor<out A> {
   fun <B> fmap(f: (A) -> B): Functor<B>
@@ -25,7 +30,7 @@ interface Functor<out A> {
 ```kotlin
 sealed class Maybe<out A> : Functor<A> {
   abstract override fun toString(): String
-  
+
   abstract override fun <B> fmap(f: (A) -> B): Maybe<B>
 }
 ```
@@ -90,7 +95,7 @@ data class Left<out L>(val value: L): Either<L, Nothing>() {
 
   divideTenBy(5) // Right(value=2)
   divideTenBy(0) // Left(value="divide by zero")
- 
+
   divideTenBy(5).fmap { r -> r * 2 } // Right(value=4)
   divideTenBy(0).fmap { r -> r * 2 } // Left(value="divide by zero")
   ```
@@ -102,7 +107,7 @@ data class Left<out L>(val value: L): Either<L, Nothing>() {
 data class UnaryFunction<in T, out R>(val g: (T) -> R) : Functor<R> {
   override fun <R2> fmap(f; (R) -> R2): UnaryFunction<T, R2> =
     UnaryFunction { x: T -> f(g(x)) }
-    
+
   fun invoke(input: T): R = g(input)
 }
 ```
@@ -133,8 +138,8 @@ data class UnaryFunction<in T, out R>(val g: (T) -> R) : Functor<R> {
 * 다른 펑터로 컨텍스트를 변경할 수도 있다:
   ```kotlin
   val f = { a: Int -> a + 1 }
-  val g = { b: Int -> Just(b) } 
- 
+  val g = { b: Int -> Just(b) }
+
   val fg = UnaryFunction(g).fmap(f)
 
   fg.invoke(5) // Just(10)
@@ -189,7 +194,7 @@ fmap(f compose g) == fmap(f) compose fmap(g)
   val left = Just(5).fmap(f compose g)
   val right = Just(5).fmap(g).fmap(f)
   left == right // true
-  ``` 
+  ```
   * `compose`는 입출력 함수이기 때문에 `Maybe`로는 체이닝이 불가능하다:
     * 그래서 `Nothing.fmap(f) compose Nothing.fmap(g)` 처럼하면 컴파일 에러가 난다.
     * 이는 [[applicative-functor]]{애플리케이티브 펑터}를 사용해 해결해야 한다.

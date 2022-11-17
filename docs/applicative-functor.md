@@ -1,14 +1,20 @@
 # 애플리케이티브 펑터
 
+```haskell
+class Functor f => Applicative f where
+  pure  :: a -> f a
+  (<*>) :: f (a -> b) -> f a -> f b
+```
+
 ```kotlin
 interface Applicative<out A> : Functor<A> {
   fun <V> pure(value: V): Applicative<V>
-  
+
   infix fun <B> apply(ff: Applicative<(A) -> B>): Applicative<B>
 }
 ```
 
-* 함수를 가진 펑터가 다른 펑터의 값을 적용할 때 컨텍스트 안에서 처리할 수 없는 한계를 극복하기 위한 펑터. 
+* 함수를 가진 펑터가 다른 펑터의 값을 적용할 때 컨텍스트 안에서 처리할 수 없는 한계를 극복하기 위한 펑터.
 * 값이 `Just({ x -> x * 2})`인 펑터와 `Just(5)`, 함수 `{ x- > x * 2 }`만 꺼내서 `Just(5)`에 적용하려면:
   * 일반적인 펑터:
     * `Just(5).fmap(Just({ x -> x * 2 }))`
@@ -29,30 +35,30 @@ sealed class ApplicativeMaybe<out A> : Applicative<A> {
   companion object {
     fun <V> pure(value: V): Applicative<V> = ApplicativeJust(0).pure(value)
   }
-  
+
   override fun <V> pure(value: V): Applicative<V> = ApplicativeJust(value)
-  
+
   abstract override fun <B> apply(ff: Applicative<(A) -> B>): ApplicativeMaybe<B>
 }
 ```
 ```kotlin
 data class ApplicativeJust<out A>(val value: A) : ApplicativeMaybe<A>() {
   override fun toString(): String = "ApplicativeJust($value)"
-  
+
   override fun <B> apply(ff: Applicative<(A) -> B>): ApplicativeMaybe<B> = when (ff) {
     is ApplicativeJust -> fmap(ff.value)
     else -> ApplicativeNothing
   }
-  
+
   override fun <B> fmap(f: (A) -> B): ApplicativeMaybe<B> = ApplicativeJust(f(value))
 }
 ```
 ```kotlin
 object ApplicativeNothing : ApplicativeMaybe<kotlin.Nothing>() {
   override fun toString(): String = "ApplicativeNothing"
-  
+
   override fun <B> apply(ff: Applicative<kotlin.Nothing>): ApplicativeMaybe<B> = ApplicativeNothing
-  
+
   override fun <B> fmap(f: (kotlin.Nothing) -> B): ApplicativeMaybe<B> = ApplicativeNothing
 }
 ```
@@ -65,7 +71,7 @@ object ApplicativeNothing : ApplicativeMaybe<kotlin.Nothing>() {
 * `pure` 함수는 입력받은 값을 그대로 컨텍스트에 넣어서 반환한다:
   ```kotlin
   ApplicativeMaybe.pure(10) // ApplicativeJust(5)
-  ``` 
+  ```
 * `apply` 함수는 함수를 가진 메이비를 받아 값을 적용한 뒤 메이비에 넣어서 반환한다:
   ```kotlin
   ApplicativeJust(5) apply ApplicativeJust({ x: Int -> x * 2 }) // ApplicativeJust(10)
@@ -94,9 +100,9 @@ object ApplicativeNothing : ApplicativeMaybe<kotlin.Nothing>() {
     ```kotlin
     sealed class Maybe<out A> : Functor<A> {
       abstract override fun toString(): String
-      
+
       abstract override fun <B> fmap(f: (A) -> B): Maybe<B>
-      
+
       companion object
     }
 
@@ -148,7 +154,7 @@ pure(compose) apply af1 apply af2 apply af3 = af1 apply (af2 apply af3)
   val af1 = ApplicativeJust({ x: Int -> x * 2 })
   val af2 = ApplicativeJust({ x: Int -> x + 1 })
   val af3 = ApplicativeJust(30)
-  
+
   ApplicativeMaybe.pure(compose<Int, Int, Int>().curried()) apply af1 apply af2 apply af3
     == af1 apply (af2 apply af3) // true
   ```
@@ -160,7 +166,7 @@ pure(function) apply pure(x) = pure(function(x))
 ```
 
 * 좌변: `pure`를 사용해 함수와 값 `x`를 애플리케이티브 펑터에 넣는다.
-* 우변: 애플리케이티브 펑터에 `function(x)`를 넣는다. 
+* 우변: 애플리케이티브 펑터에 `function(x)`를 넣는다.
 * 이때 좌변과 우변이 같아야 한다.
 * `ApplicativeMaybe`가 준동형 사상 법칙을 만족하는지 보면:
   ```kotlin
@@ -206,6 +212,6 @@ pure(function) apply af = af.fmap(function)
   ```kotlin
   val function = { x: Int -> x * 2 }
   val af = ApplicativeJust(10)
-  
+
   ApplicativeMaybe.pure(function) apply af == af.fmap(function) // true
   ```
