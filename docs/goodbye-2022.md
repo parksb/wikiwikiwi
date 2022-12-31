@@ -1,5 +1,9 @@
 # Goodbye 2022
 
+> 856 contributions in 2022
+
+![](https://user-images.githubusercontent.com/6410412/210134465-e6fce81b-b0bc-435b-8737-44832b3e118f.png)
+
 ## 1월
 
 * **만 3년 근속했다.** 이제 4년차 프로그래머인데, 연차에서 오는 부담이 느껴진다.
@@ -88,6 +92,7 @@
   * 핫스팟으로 화상 미팅하다가 끊겨서 급하게 카페로 달려가기도 했다.
   * 사실 다른 건 둘째치고 밤에 TV를 볼 수 없어서 힘들었다. 정말 긴 저녁을 보냈다.
 * 보성, 목포로 여행을 다녀왔다. 태백산맥 다 읽은지 3개월만이었다.
+  ![](https://user-images.githubusercontent.com/6410412/210135236-ebdc4514-05ed-489d-a2c9-efed653035ab.png)
 * :page_facing_up: ["Asynchronous Programming in Rust", Async Foundations Team, 2022](https://rust-lang.github.io/async-book)
 * :book: **[[megalopolis-seoul-railroad]]{전현우, "거대도시 서울 철도: 기후위기 시대의 미래 환승법", 워크룸프레스, 2020}**
   * 정말 '철도의 백과전서'라고 부를만한 엄청난 책이다. 사철 누드제본한 덕분에 500 페이지가 넘는 이 책을 편하게 볼 수 있었다.
@@ -109,6 +114,7 @@
 * 퇴사를 준비하며 인수인계 자료를 만들고, 남은 업무를 몰아친 정신없는 5월이었다.
 * :headphones: IVE, "LOVE DIVE", LOVE DIVE, 2022
 * :page_facing_up: 한상희, "헌법의 눈으로 본 차별금지법", 민주법학(74), pp. 149-196
+* :page_facing_up: [각종모에화, "나의 작은 아기 교수님", 2022](https://twitter.com/everymoewha/status/1525691801281015809)
 * :book: 페터르 판데르린던, "컴파일러 개발자가 들려주는 C 이야기", 인사이트, 정기훈 역, 2022
   * 너드 향기가 진하게 나는 책이다. 어디가서 C를 배웠다고 말하면 안 될 것 같다는 생각이 들 정도의 디테일을 담고 있다. 정말로 이건 두 번째 C 언어 책이어야 한다.
   * 책을 읽고 내가 내린 결론은 될 수 있으면 프로덕트에 C를 사용하지 말자는 것이다. C++도 마찬가지다. 저자는 C++의 결함과 복잡함으로 문제가 끊이지 않음에도 불구하고 C++은 계속 사용될 것이고, 더 나아질 것이라고 말했지만 나는 그 자리를 Rust가 대신해주길 바란다.
@@ -119,11 +125,15 @@
   ![](https://user-images.githubusercontent.com/6410412/181791219-1c280b88-f547-4f84-90e5-f5a655da485a.png)
   * 3년전 입사 할 때 다짐했던 것들을 모두 이뤄서 정말 졸업하는 기분이었다. 퇴사하면 해방, 자유 같은 단어가 먼저 연상되지만, 실제로는 그렇지 않았다. 퇴사 직전부터 시원섭섭한 기분에 퇴사가 부럽다는 주변 사람들의 말에도 마냥 웃지 못했다. 마지막 근무일에 출입증을 반납하고 파르나스 타워를 나올 때는 정말 심란했다. 이전 사무실이었던 선릉 스파크플러스까지 걸어가며 지난 3년을 추억했다.
   * 회사라는 인프라 위에서 많은 것을 얻었고, 앞으로는 더 많은 것을 얻을 수도 있었다. 그럼에도 지금이 아니면 경험하지 못할 일들이 있는 것 같아서 퇴사를 결정했다. 나는 직장인으로서 회사를 다닐 때도 스스로를 학생으로 정체화했다. 성장하기 위해 입사했고, 성장하기 위해 복학하는 것이다.
+  * 마지막 출근일은 지그재그 7주년 기념 행사가 있는 날이었다. 이날 새로 만든 웰컴키트를 공개해 전 직원에게 발송해줬는데, 나는 퇴사자인데도 받았다.
+    ![](https://user-images.githubusercontent.com/6410412/181791256-490bf11a-5cf5-443d-9c72-2285ac72c275.png)
 * 퇴사하자마자 양양으로 여행을 떠났다. 친구들과 바로 여행을 떠난 덕분에 기분이 많이 괜찮아졌다.
 * **나를 철없게 만드는 사람과 연애를 시작했다.**
+* :framed_picture: "2022 서울국제도서전" @코엑스
 * :clapper: "오마주", 2021
 * :clapper: "브로커", 2022
 * :clapper: **"헤어질 결심", 2022**
+* :page_facing_up: [Dylan Patel, "Apple M2 Die Shot and Architecture Analysis - Big Cost Increase And A15 Based IP", 2022](https://www.semianalysis.com/p/apple-m2-die-shot-and-architecture)
 * :book: 알베르토 사보이아, "아이디어 불패의 법칙", 인플루엔셜, 이지연 역, 2022
   * 함께 이것저것 하고 있는 연쇄창업가 형의 선물로 읽게 된 책. 아이디어 발상법이 아니라 검증법에 대한 내용이라는 점에서 흥미로웠다. 프리토타이핑이라는 좋은 도구를 알게됐다. 쉽고 재밌게 읽을 수 있었다.
 
@@ -151,8 +161,8 @@
 * [papers-i-love](https://github.com/parksb/papers-i-love) 저장소를 만들자마자 며칠만에 스타 200개를 넘겼다.
   ![](https://user-images.githubusercontent.com/6410412/209688106-812a3ba1-2881-47d4-ad6c-7bddf3080993.png)
 * 수강 신청을 망쳤다.
-* 부산 여행을 다녀왔다.
-  * 바다에 발만 담그겠다고 생각했는데 그 누구보다 즐겁게 물놀이를 했다.
+* 친구들과 부산 여행을 다녀왔다.
+  * 바다에 발만 담그겠다고 생각하고 수영복도 안 가져갔는데, 그 누구보다 즐겁게 물놀이를 했다.
   * 밤에 영웅본색을 보고 다음날 내내 말도 안 되는 가사로 주제가를 부르면서 다녔다.
 * 중고등학교 동창들과 모교를 찾아갔다가 어떨결에 키오스크 리디자인 프로젝트를 한다는 고1 학생들을 멘토링했다.
 * :framed_picture: "앤서니 브라운의 원더랜드 뮤지엄展" @예술의전당
@@ -208,13 +218,21 @@
     * [함수형 프로그래밍이 중요한 이유](https://parksb.github.io/papers-i-love/why-functional-programming-matters.html) 번역을 마쳤다.
 * 여자친구 덕분에 너무 행복한 생일을 보냈다.
   ![](https://user-images.githubusercontent.com/6410412/209690393-7f198e72-a566-4de9-86ee-0a9a17731d94.jpg)
-  * 친구들에게 에어태그를 선물 받았다. '이걸 누가 쓰나...' 했는데 내가 쓴다.
+  * 친구들에게 에어태그를 선물 받았다. '이걸 누가 쓰나...' 했는데 내가 쓴다. 어디 보여주기 부끄러운 각인이 새겨져 있다.
     ![](https://user-images.githubusercontent.com/6410412/209690409-ce310b7f-fc18-49cc-b48c-53427c3d9a46.jpg)
 * NeoVim 환경을 정리했다. 지금까지도 그랬지만, 앞으로도 이 노트북에 VSCode를 설치할 일은 없을 것 같다.
 * :writing_hand: 패러다임으로서의 함수형 프로그래밍에 대한 단상을 적었다: [함수형 프로그래밍의 설득력](https://parksb.github.io/article/40.html)
 * :framed_picture: "MMCA 현대차 시리즈 2022: 최우람 - 작은 방주" @MMCA서울
-* :framed_picture: "MMCA 이건희컬렉션 특별전: 이중섭" @MMCA서울
+* :framed_picture: **"MMCA 이건희컬렉션 특별전: 이중섭" @MMCA서울**
+* :clapper: "사이버펑크: 엣지러너", 2022
+  * 처음엔 너무 폭력적이고 식상해서 삐딱하게 봤는데 여운이 많이 남았다.
+* :clapper: "아폴로 10 1/2", 2022
+* :clapper: "인생은 아름다워", 2022
+* :clapper: **"에브리씽 에브리웨어 올 앳 원스", 2022**
+  * 평이 좋아서 기대하고 봤는데 기대 이상으로 정말 최고였다.
 * :page_facing_up: ["CIS 194", 2013](https://www.seas.upenn.edu/~cis1940/spring13)
+* :page_facing_up: [문상현, "아무도 책임지지 않는 그날, 이태원에서", 시사IN, 2022](https://www.sisain.co.kr/news/articleView.html?idxno=48903)
+* :page_facing_up: [신인아, "두 유 노우 K-그래픽 디자인?", 2022](https://brunch.co.kr/@sceneryoftoday/11)
 * :page_facing_up: John Hughes, "Why Functional Programming Matters", 1990
 * :book: 폴 그레이엄, "해커와 화가", 임백준 역, 2014
   * 주위의 극찬에 비해서는 별로. 특히 사회학적 통찰이 담긴 글은 그 인식이 너무나 납작해서 민망할 정도였다.
@@ -222,12 +240,6 @@
   * 나도 글을 너무 엄밀하게 쓰려고만 하지 말고 이렇게 가볍게 쓸 수 있어야 할텐데 겁이 나서 그런지 쉽지 않다.
 * :book: 닐 포드, "함수형 사고", 김재완 역, 한빛미디어, 2016
   * 특정 언어에 국한된 내용이 많아서 아쉬웠다.
-* :clapper: "사이버펑크: 엣지러너", 2022
-  * 처음엔 너무 폭력적이고 식상해서 삐딱하게 봤는데 여운이 많이 남았다.
-* :clapper: "아폴로 10 1/2", 2022
-* :clapper: "인생은 아름다워", 2022
-* :clapper: **"에브리씽 에브리웨어 올 앳 원스", 2022**
-  * 평이 좋아서 기대하고 봤는데 기대 이상으로 정말 최고였다.
 
 ## 12월
 
@@ -237,10 +249,12 @@
   * DP, A* Search, 그래픽스 파이프라인, Phong 반사 모델, CNN, RNN, DQN, Informer, DLinear, 효과이론, 이데올로기, 호혜적 교환, 라파누이... 새로 배운 것도 많고 기억에 남는 것도 참 많다.
   * 복학을 선택한 이유를 더 생각해 봤다. 어떤 문제를 다룰 때 회사에서는 대체로 프랙티컬한 방법을 취한다. 서버의 코드는 저장/응답 로직이 대부분이고, 프로젝트가 달라져서 환경과 목표는 언제나 비슷하다.  학교에서는 확실히 아카데믹한 방법을 배울 수 있어서 좋았다. 다양한 환경에서 완전히 새로운 도전을 해볼 수 있었다. 다음 학기도 기대된다.
 * :framed_picture: "구름산책자" @리움미술관
-* :headphones: NewJeans, "Ditto", Ditto, 2022**
-* :headphones: 카라, "WHEN I MOVE", MOVE AGAIN, 2022**
+* :headphones: NewJeans, "Ditto", Ditto, 2022
+* :headphones: 카라, "WHEN I MOVE", MOVE AGAIN, 2022
 * :clapper: "한산: 리덕스", 2022
 * :clapper: "올빼미", 2022
 * :clapper: "나이브스 아웃: 글래스 어니언", 2022
   * 많이 기대했는데 전편과 달리 직접적인 비유가 많아서 조금 아쉬웠다.
+* :clapper: "아바타: 물의 길", 2022
+* :page_facing_up: [김창환, "인문학적 글쓰기의 힘", 2022](https://sovidence.tistory.com/1214)
 
