@@ -18,6 +18,11 @@
 * [[functional-programming-in-kotlin]]
 * [[the-pragmatic-programmer]]
 
+## Papers
+
+* [[flux-multi-surface-computing-in-android]]
+* [[mobile-plus-multi-device-mobile-platform-for-cross-device-functionality-sharing]]
+
 ## Notes
 
 * [[npm-distribution]]
