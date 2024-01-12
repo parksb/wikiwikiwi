@@ -4,6 +4,8 @@
 * [[cartesian-product]]
 * [[katex]]
 * [[floating-point]]
+* [[base-n]]
+* [[sieve-of-eratosthenes]]
 
 ## Books
 
