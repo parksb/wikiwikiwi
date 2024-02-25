@@ -58,7 +58,7 @@ interface SearchIndex {
     .use(mdEmoji)
     .use(mdTex, {
       engine: katex,
-      delimiters: 'gitlab',
+      delimiters: 'dollars',
       macros: { '\\RR': '\\mathbb{R}' },
     })
     .use(mdAnchor)

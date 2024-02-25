@@ -44,53 +44,57 @@
 * 주어진 조건에 따라 튜플을 선택하는 명령.
 * 소문자 그리스 문자 시그마를 사용한다.
 
-```math
-\sigma_{dept\_name = "Physics"}(instructor) 
-```
-```math
-\sigma_{salary \gt 90000}(instructor) 
-```
-```math
-\sigma_{dept\_name = "Physics" \land salary \gt 90000}(instructor) 
-```
+$$
+\sigma_{dept\_name = "Physics"}(instructor)
+$$
+
+$$
+\sigma_{salary \gt 90000}(instructor)
+$$
+
+$$
+\sigma_{dept\_name = "Physics" \land salary \gt 90000}(instructor)
+$$
 
 ### The Project Operation
 
 * 릴레이션의 요소를 리스팅해주는 명령.
 * 대문자 그리스 문자 파이를 사용한다.
 
-```math
+$$
 \Pi_{ID, name, salary}(instructor)
-```
-```math
+$$
+
+$$
 \Pi_{ID, name, salary / 12}(instructor)
-```
+$$
 
 ### Composition of Relational Operations
 
-```math
+$$
 \Pi_{name}(\sigma_{dept\_name = "Physics"}(instructor))
-```
+$$
 
 ### The Cartesian-Product Operation
 
 * 두 릴레이션을 합치는 명령.
 
-```math
+$$
 r_1 \times r_2
-```
-```math
+$$
+
+$$
 r = instructor \times teaches
-```
+$$
 
 ### The Join Operation
 
 * join operation은 select와 cartesian product를 합친 명령.
 
-```math
+$$
 r \Join_\theta s = \sigma_\theta(r \times s)
-```
-```math
-\Join_{instructor.ID = teaches.ID} = \sigma_{instructor.ID = teaches.ID}(instructor \times teaches)
-```
+$$
 
+$$
+\Join_{instructor.ID = teaches.ID} = \sigma_{instructor.ID = teaches.ID}(instructor \times teaches)
+$$

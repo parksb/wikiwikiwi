@@ -15,7 +15,7 @@
   * CPU utilization: CPU 사용량
   * Throughput: 단위 시간 당 끝마친 프로세스의 수
   * Turnaround time: 하나의 프로세스가 레디 큐에서 대기한 시간부터 작업을 마칠 때까지 걸리는 시간
-  * Waiting time: 프로세스가 레디 큐에서 대기한 시간 
+  * Waiting time: 프로세스가 레디 큐에서 대기한 시간
   * Response time: 프로세스가 처음으로 CPU를 할당받기까지 걸린 시간
 * 선점(Preemptive) 방식과 비선점(Non-Preemptive) 방식으로 나뉜다:
   * 선점 스케줄링:
@@ -45,9 +45,9 @@
 0                                            9    10   11
 ```
 
-```math
+$$
 \text{Average wating time} = {0 + 9 + 10 \over 3} = 6.33
-```
+$$
 
 ## SJF (Shortest Job First)
 
@@ -72,9 +72,9 @@
 0              3                             9                                  16                                      24
 ```
 
-```math
+$$
 \text{Average wating time} = {3 + 16 + 9 + 0 \over 4} = 7
-```
+$$
 
 ## SRF (Shortest Remaining Time First)
 
@@ -87,7 +87,7 @@
 | P1 | 0 | 8 | 0 | 17 | 9 |
 | P2 | 1 | 4 | 1 | 5 | 0 |
 | P3 | 2 | 9 | 17 | 24 | 15 |
-| P4 | 3 | 5 | 5 | 7 | 2 |  
+| P4 | 3 | 5 | 5 | 7 | 2 |
 
 ```
 +----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
@@ -96,9 +96,9 @@
 0    1                   5                        10                                 17                                           26
 ```
 
-```math
+$$
 \text{Average wating time} = {9 + 0 + 15 + 2 \over 4} = 26
-```
+$$
 
 ## RR (Round Robin)
 
@@ -123,9 +123,9 @@ Time quantum = 3ms
 0              3         5         7              10             13             16             19
 ```
 
-```math
+$$
 \text{Average wating time} = {4 + 3 + 5 \over 3} = 4
-```
+$$
 
 ## Priority Scheduling
 
@@ -149,6 +149,6 @@ Time quantum = 3ms
 0    1              4                        9         11   12
 ```
 
-```math
+$$
 \text{Average wating time} = {4 + 0 + 9 + 11 + 1 \over 5} = 5
-```
+$$

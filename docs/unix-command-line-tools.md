@@ -1,6 +1,6 @@
 # Unix Command line tools
 
-## BSD $`\neq`$ UNIX
+## BSD $\neq$ UNIX
 
 * 커맨드 라인 툴은 대부분 두가지 버전이 있다:
   * BSD 버전 (BSDs & MacOS)
@@ -28,7 +28,7 @@ $ grep bananas foo.txt
 * `-l` (fiLenames) - 일치하는 파일의 파일 이름만 보여준다.
 * `-v` (inVert match) - 일치하지 않는 모든 라인을 찾는다.
 * `-r` (Recursive) - 디렉토리 안의 모든 파일에 대해 검색한다.
-* `-o` (Only) - 라인에서 일치하는 부분만 보여준다. 
+* `-o` (Only) - 라인에서 일치하는 부분만 보여준다.
 * `-E` (Egrep) - 졍규표현식을 이용해 검색한다.
 * `-F` (Fgrep) - 정규표현식을 이용하지 않고 검색한다.
 
@@ -77,7 +77,7 @@ $ echo "/home/tmp" | xargs ls
 * 파일명에 공백이 있으면 분리된 인자로 간주한다.
 * `-n 1` - 각 입력에 대해 xargs가 분리된 프로세스로 동작한다.
 * `-P` - 병렬 프로세스의 최대 개수를 설정한다.
-  
+
 ## awk
 
 데이터를 조작하기 위한 작은 프로그래밍 언어다.

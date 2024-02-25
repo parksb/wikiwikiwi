@@ -38,7 +38,7 @@
 * 메모리에 의해 취급되는 주소는 physical address.
 * compile-time과 load-time에서 주소를 binding할 때는 logical address와 physical address가 같게 생성된다.
 * 반면 execution-time에서는 다르게 생성된다:
-  * 이 경우 logical address를 virtual address라고 한다. 
+  * 이 경우 logical address를 virtual address라고 한다.
   * virtual address를 physical address로 대응시키는 것은 하드웨어 디바이스인 MMU(Memory-Management Unit)가 한다.
 
 ## Swapping
@@ -122,14 +122,8 @@
   * TLB는 참조했던 페이지를 담아주는 캐시 역할을 한다.
   * TLB는 key-value pair로 데이터를 관리하는 acssociative memory이다.
   * CPU는 page table보다 TLB을 우선적으로 참조한다.
-* page number가 TLB에서 발견되는 비율을 hit ratio라고 하며, effective memory-access time을 구하는데 쓸 수 있다:
-  ```math
-  \text{Effecftive memory-access} = \text{Hit ratio} \times \text{Memory access time} + (1 - \text{Hit ratio}) \times (2 \times \text{Memory access time})
-  ```
-* 만약 hit ratio가 80%이고, 평균 메모리 접근 시간이 100 나노초라면 다음과 같이 계산한다:
-  ```math
-  \text{Effective memery-access time} = 0.8 \times 100 + 0.2 \times 200 = 120
-  ```
+* page number가 TLB에서 발견되는 비율을 hit ratio라고 하며, effective memory-access time을 구하는데 쓸 수 있다: $\text{Effecftive memory-access} = \text{Hit ratio} \times \text{Memory access time} + (1 - \text{Hit ratio}) \times (2 \times \text{Memory access time})$
+* 만약 hit ratio가 80%이고, 평균 메모리 접근 시간이 100 나노초라면 다음과 같이 계산한다: $\text{Effective memery-access time} = 0.8 \times 100 + 0.2 \times 200 = 120$
 
 ### Protection
 
@@ -164,7 +158,7 @@
 * address space가 32비트보다 커지면 hierachial paging이 비효율적이기 때문에 주로 이 방법을 쓴다.
 * virtual page number를 hashing해 page table을 참조하는 데 사용한다.
 * hashed page table에서는 linked list를 따라가며 page number를 비교하고, 일치하면 그에 대응하는 page frame number를 얻는다.
-* hash table은 검색에 $`O(1)`$ 시간이 걸려 매우 빠르지만 구현이 어렵다.
+* hash table은 검색에 $O(1)$ 시간이 걸려 매우 빠르지만 구현이 어렵다.
 
 ### Inverted Page Tables
 

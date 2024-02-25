@@ -5,64 +5,64 @@
 
 ## Dots
 
-```math
+$$
 x_1 + \dots + x_n
-```
+$$
 
 ## Fraction
 
-```math
+$$
 {n(n + 1)} \over 2
-```
+$$
 
 ## Sum
 
-```math
+$$
 \displaystyle\sum_0^n
-```
+$$
 
-```math
+$$
 \textstyle\sum_0^n
-```
+$$
 
-```math
+$$
 \cfrac{2}{1+\cfrac{2}{1+\cfrac{2}{1}}}
-```
+$$
 
 ## Matrix
 
-```math
+$$
 \begin{matrix}
    a & b \\
    c & d
 \end{matrix}
-```
+$$
 
-```math
+$$
 \begin{bmatrix}
    a & b \\
    c & d
 \end{bmatrix}
-```
+$$
 
 ## Cases
 
-```math
+$$
 \begin{cases}
    a &\text{if } b \\
    c &\text{if } d
 \end{cases}
-```
+$$
 
 ## Aligned
 
-```math
+$$
 \begin{aligned}
 1.10101010100001101000010 &= 1 + (1 \times 2^{-1}) + (0 \times 2^{-2}) + (1 \times 2^{-3}) + (0 \times 2^{-4}) + \dots \\
 &=1 + 2^{-1} + 2^{-3} + 2^{-5} + 2^{-7} + 2^{-9} + 2^{-14} + 2^{-15} + 2^{-17} + 2^{-22} \\
 &=1.0 + 0.666115
 \end{aligned}
-```
+$$
 
 ## References
 

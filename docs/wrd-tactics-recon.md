@@ -10,7 +10,7 @@
 
 ![](https://preview.redd.it/r5g5zqmxyd671.png?width=2077&format=png&auto=webp&s=b7b15da314e9cfe754419b374deed2919734f117)
 
-* 은밀성(Stealth)과 광학장비(Optics) 값의 방정식으로 계산한다: $`{37.5 \times \text{Optics}} \over {(\text{Stealth} \div \text{Noise}) \times \text{Cover}}`$
+* 은밀성(Stealth)과 광학장비(Optics) 값의 방정식으로 계산한다: ${37.5 \times \text{Optics}} \over {(\text{Stealth} \div \text{Noise}) \times \text{Cover}}$
 * 광학장비: 적을 얼마나 잘 탐지할 수 있는가?
 * 은밀성: 적으로부터 얼마나 잘 은폐할 수 있는가?
 * 소음: 높은 소음은 은밀성을 낮춘다. (발포안함 ~ 미사일)
