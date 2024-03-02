@@ -42,7 +42,7 @@ redis> SET key ”value”
 “OK”
 ```
 
-### GET 
+### GET
 
 * 키를 인자로 받아 해당 키의 값을 반환한다.
 
@@ -138,6 +138,11 @@ redis> scan 17
    8) "key:9"
    9) "key:11"
 ```
+
+## 같이 보기
+
+* [[redis-cluster]]
+* [[redis-pub-sub]]
 
 ## References
 
