@@ -4,3 +4,4 @@
 * [[redis]]
 * [[designing-data-intensive-applications]]
 * [[database-system-concepts]]
+* [[apache-kafka]]

@@ -13,7 +13,6 @@
 * [[data-structure]]
 * [[concurrent-programming]]
 * [[algorithm]]
-* [[apache-kafka]]
 
 ## Books
 
