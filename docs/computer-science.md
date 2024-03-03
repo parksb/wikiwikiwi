@@ -12,6 +12,8 @@
 * [[computer-organization-and-design]]
 * [[data-structure]]
 * [[concurrent-programming]]
+* [[algorithm]]
+* [[apache-kafka]]
 
 ## Books
 
