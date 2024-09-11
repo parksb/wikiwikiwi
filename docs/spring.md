@@ -2,7 +2,7 @@
 
 * 스프링은 IoC와 AOP를 지원하는 경량 컨테이너 프레임워크.
 * 개인적으로 스프링을 안 좋아하지만 스프링의 주요 개념들이 다른 프레임워크에 많은 영향을 준 것 같다.
-* 지금 업무에서도 쓰고 있다. 사용법은 알겠는데, 내부 구조를 잘 모르겠다. 
+* 지금 업무에서도 쓰고 있다. 사용법은 알겠는데, 내부 구조를 잘 모르겠다.
 
 ## Spring vs Spring Boot
 
@@ -27,9 +27,10 @@
 
 ## Bean
 
-* 빈은 스프링의 개념이 아니라 자바의 개념임.
+* 자바 빈과 스프링 빈이 있다:
+  * 자바 빈은 getter와 setter를 가진 자바 클래스를 말한다.
+  * 스프링 빈은 스프링 IoC 컨테이너에 의해 관리되는 객체 인스턴스를 말한다. 즉, 스프링이 관리하는 객체다.
 * 빈은 컨테이너에 제공한 설정 메타데이터와 함께 생성된다.
-* IoC 컨테이너는 빈을 관리한다.
 * XML로 빈을 등록할 수 있다:
   ```xml
   <beans>
@@ -48,7 +49,7 @@
   }
   ```
   * 스프링은 `@Component`, `@Service`, `@Controller` 등 스테레오타입 어노테이션도 제공한다.
-  * 어노테이션을 붙은 클래스는 빈 스캐너를 통해 빈으로 등록된다. 
+  * 어노테이션을 붙은 클래스는 빈 스캐너를 통해 빈으로 등록된다.
 
 ## Dependency Injection
 
@@ -64,20 +65,20 @@
 public class Client {
     // Internal reference to the service used by this client
     private ExampleService service;
-  
+
     // Constructor
     Client() {
         // Specify a specific implementation in the constructor instead of using dependency injection
         service = new ExampleService();
     }
-  
+
     // Method within this client that uses the services
     public String greet() {
         return "Hello " + service.getName();
     }
 }
 ```
-  
+
 ### With DI
 
 #### Constructor-based Injection
@@ -98,9 +99,9 @@ class Client(private val service: Service) {
 
 * 스프링 4.3 버전부터 생성자가 하나일때는 `@Autowired` 어노테이션을 붙이지 않아도 된다:
   * 코틀린은 한 클래스에 하나의 생성자만 정의할 수 있으므로 항상 붙이지 않는다고 생각해도 된다.
-    
-#### Setter-based Injection    
-    
+
+#### Setter-based Injection
+
 ```java
 // Setter method
 @Autowired

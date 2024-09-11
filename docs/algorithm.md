@@ -2,3 +2,4 @@
 
 - [[a-star-search]]
 - [[strongly-connected-component]]
+- [[binary-search]]
