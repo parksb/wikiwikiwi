@@ -19,6 +19,7 @@
 
 * [[functional-programming-in-kotlin]]
 * [[the-pragmatic-programmer]]
+* [[a-philosophy-of-software-design]]
 
 ## Notes
 
