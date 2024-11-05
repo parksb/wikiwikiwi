@@ -33,10 +33,9 @@
 <body>
   <header role="navigation">
     <small>
-      <a href="index.html">🥝wikiwikiwi</a>
       <% document.breadcrumbs.map((breadcrumb) => { %>
+        <a href="<%- breadcrumb.filename %>.html"><%- breadcrumb.title %></a>
         <span> ＞ </span>
-        <a href="<%- breadcrumb %>.html"><%- breadcrumb %></a>
       <% }) %>
       ― <a href="https://github.com/parksb/wikiwikiwi/commits/master/docs/<%- document.filename %>.md">history</a> ·
       <a href="https://raw.githubusercontent.com/parksb/wikiwikiwi/master/docs/<%- document.filename %>.md">raw</a>

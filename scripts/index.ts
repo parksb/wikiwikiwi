@@ -16,6 +16,8 @@ import * as mdEmoji from 'markdown-it-emoji';
 import mdMermaid from 'markdown-it-mermaid';
 import * as mdExternalLink from 'markdown-it-external-links';
 
+const Denque = require('denque');
+
 interface Document {
   title: string;
   filename: string; // without extension
@@ -74,7 +76,6 @@ interface SearchIndex {
       internalDomains: ['wikiwikiwi.vercel.app'],
     });
 
-    const writtenFiles: string[] = [];
     const sitemapUrls: string[] = [];
     const searchIndices: SearchIndex[] =[];
 
@@ -82,7 +83,7 @@ interface SearchIndex {
     const linkRegex = /\[\[(.+?)\]\]/g;
     const labeledLinkRegex = /\[\[(.+?)\]\]\{(.+?)\}/g;
 
-    const findInternalLinks = (markdown: string): string[] => {
+    const findInternalFilenames = (markdown: string): string[] => {
       return [
         ...new Set([
           ...markdown.match(linkRegex)?.map((link) => link.replace(/(\[\[)|(\]\])/g, '')) || [],
@@ -91,23 +92,19 @@ interface SearchIndex {
       ];
     };
 
-    const writeHtmlFromMarkdown = async (filename: string, breadcrumbs: string[]) => {
-      writtenFiles.push(filename);
+    const queue = new Denque([{ filename: 'index', breadcrumbs: [] }]);
+    const writtenFiles: Set<string> = new Set(['index']);
+
+    while (queue.length > 0) {
+      const { filename, breadcrumbs } = queue.shift();
 
       const preContents = '[[toc]]\n\n';
       const markdown = (await fs.readFile(`${MARKDOWN_DIRECTORY_PATH}/${filename}.md`)).toString();
-
       const html = md.render(`${preContents}${markdown}`)
         .replace(labeledLinkRegex, '<a href="./$1.html">$2</a>')
         .replace(linkRegex, '<a href="./$1.html">$1</a>');
-
-      const links = findInternalLinks(markdown);
-      const children = await Promise.all(
-        links.filter((link) => !writtenFiles.includes(link))
-          .map(async (link) => writeHtmlFromMarkdown(link, [...breadcrumbs, link]))
-      );
-
-      const document: Document = { title: markdown.match(/^#\s.*/)[0].replace(/^#\s/, ''), filename, html, breadcrumbs, children };
+      const title = markdown.match(/^#\s.*/)[0].replace(/^#\s/, '');
+      const document: Document = { title, filename, html, breadcrumbs: [...breadcrumbs, { title, filename }], children: [] };
 
       const searchIndex: SearchIndex = { title: document.title, filename, text: markdown };
       searchIndices.push(searchIndex);
@@ -115,10 +112,13 @@ interface SearchIndex {
       fs.writeFile(`${DIST_DIRECTORY_PATH}/${filename}.html`, ejs.render(String(TEMPLATE_FILE_PATH), { document }));
       sitemapUrls.push(`<url><loc>${WEBSITE_DOMAIN}/${filename}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
 
-      return document;
-    };
-
-    await writeHtmlFromMarkdown('index', []);
+      for (const internalFilename of findInternalFilenames(markdown)) {
+        if (!writtenFiles.has(internalFilename)) {
+          queue.push({ filename: internalFilename, breadcrumbs: document.breadcrumbs });
+          writtenFiles.add(internalFilename);
+        }
+      }
+    }
 
     fs.writeFile(`${DIST_DIRECTORY_PATH}/search.html`, ejs.render(String(SEARCH_TEMPLATE_FILE_PATH), { document: JSON.stringify(searchIndices) }));
 
