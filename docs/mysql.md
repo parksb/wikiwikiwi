@@ -214,6 +214,6 @@ student, professor 테이블에서 major 컬럼의 값이 일치하지 않는 �
 SELECT * FROM student FULL OUTER JOIN professor ON student.major = professor.major WHERE student.major IS NULL OR professor.major IS NULL
 ```
 
-## 같이 보기
+## 관련문서
 
-- [[relational-algebra]]
+- [[relational-algebra]]{관계대수}

@@ -3,7 +3,7 @@
 ## 하위문서
 
 * [[git]]{Git}
-- [[kubernetes]]{Kubernetes}
+* [[kubernetes]]{Kubernetes}
 * [[spring]]{Spring}
 * [[react]]{React}
 * [[svelte]]{Svelte}

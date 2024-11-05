@@ -76,7 +76,7 @@
 - 쿼리를 표현하기 위한 internal data structure.
 - 쿼리의 동작을 트리로 표현할 수 있다.
 
-## 같이 보기
+## 관련문서
 
-- [[relational-data-model]]
-- [[mysql]]
+- [[relational-data-model]]{관계형 데이터 모델}
+- [[mysql]]{MySQL}
