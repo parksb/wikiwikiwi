@@ -2,7 +2,6 @@
 
 ## 하위문서
 
-- [[amphibious-assault-ship]]{Amphibious Assault Ship}
 - [[formula-one]]{Formula 1}
 - [[fissured-ceiling-tile]]{Fissured ceiling tile}
 - [[oled-and-qled]]{OLED & QLED}

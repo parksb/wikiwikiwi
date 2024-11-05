@@ -2,7 +2,7 @@
 
 ## Status
 
-* AP Power: 장갑관통력. AP가 전차의 장갑보다 높아야 피해를 입힐 수 있음. HEAT는 최소 1의 피해를 입힘. 
+* AP Power: 장갑관통력. AP가 전차의 장갑보다 높아야 피해를 입힐 수 있음. HEAT는 최소 1의 피해를 입힘.
 * HE Power: 고폭위력. 대인, 차량에 효과적.
 
 ## Weapons traits[^weapons-traits]
@@ -24,14 +24,11 @@
 * SIHP (Anti-Ship): 대함무기.
 * CLUS (Cluster): 집속탄. 일정고도에서 자탄이 뿌려짐. 보병에게는 피해를 입히지 않음.
 
-## Tactics
+## 하위문서
 
-* [[wrd-tactics-recon]]
-
-## Decks
-
-* [[wrd-deck-blue-dragon]]
-* [[wrd-deck-eastern-bloc]]
+* [[wrd-tactics-recon]]{정찰}
+* [[wrd-deck-blue-dragon]]{청룡연합군 덱}
+* [[wrd-deck-eastern-bloc]]{동구권동맹군 덱}
 
 ## 참고자료
 
