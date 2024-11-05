@@ -1,3 +1,3 @@
 # Compiler
 
-* [[llvm]]
+* [[llvm]]{LLVM}

@@ -1,4 +1,4 @@
-# Strongly Connected Component
+# 강한 연결 요소
 
 - 연결(connectedness):
   - 그래프 $G$의 모든 정점쌍에 대해, 경로가 있다면 $G$는 연결되어 있다.

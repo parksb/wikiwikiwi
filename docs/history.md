@@ -1,9 +1,9 @@
-# History
+# 역사
+
+## 하위문서
 
 * [[modern-history-of-japan]]{일본근현대사}
 
-## Books
+## 관련문서
 
-* [[sapiens]]{사피엔스}
-* [[what-is-history]]{역사란 무엇인가}
-* [[taebaek-sanmaeck]]{태백산맥}
+* [[history-book]]{역사책}

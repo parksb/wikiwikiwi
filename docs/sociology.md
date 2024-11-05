@@ -1,7 +1,7 @@
-# Sociology
+# 사회학
 
-## Books
+## 하위문서
 
-* [[education-premium]]
-* [[what-did-architecture-do]]
-* [[megalopolis-seoul-railroad]]
+## 관련문서
+
+* [[sociology-book]]

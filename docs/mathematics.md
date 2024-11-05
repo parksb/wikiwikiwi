@@ -1,12 +1,13 @@
-# Mathematics
+# 수학
 
-* [[concrete-mathematics]]
-* [[cartesian-product]]
-* [[katex]]
-* [[floating-point]]
-* [[base-n]]
-* [[sieve-of-eratosthenes]]
+## 하위문서
 
-## Books
+* [[cartesian-product]]{카테시안 곱}
+* [[katex]]{KaTeX}
+* [[floating-point]]{부동소수점}
+* [[base-n]]{진법}
+* [[sieve-of-eratosthenes]]{에라토스테네스의 체}
 
-* [[mathematics-reboot]]
+## 관련문서
+
+* [[mathematics-book]]{수학책}

@@ -1,4 +1,4 @@
-# Programming Paradigm
+# 프로그래밍 패러다임
 
-* [[functional-programming]]
-* [[oop-variance]]
+* [[functional-programming]]{함수형 프로그래밍}
+* [[variance]]{변성}

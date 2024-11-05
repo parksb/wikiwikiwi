@@ -8,7 +8,7 @@
 * `Dog` < `Canine` < `Animal` 상속 관계가 있다고 전제하고 각 변성을 살펴본다:
   ```kotlin
   interface Box<T>
-  
+
   class Animal
   class Canine : Animal()
   class Dog : Canine()

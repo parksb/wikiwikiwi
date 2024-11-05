@@ -1,8 +1,7 @@
-# Computer Security
+# 컴퓨터 보안
 
-* [[jwt]]
-* [[ssh-key]]
+## 하위문서
 
-## Notes
-
-* [[how-to-update-gpg-key-on-github]]
+* [[jwt]]{JWT}
+* [[ssh-key]]{SSH Key}
+* [[how-to-update-gpg-key-on-github]]{GitHub GPG 키 업데이트하는 방법}

@@ -1,4 +1,9 @@
 # Operating System
 
-* [[unix]]
-* [[operating-system-concepts]]
+## 하위문서
+
+* [[unix]]{UNIX}
+
+## 관련문서
+
+* [[operating-system-concepts]]{Operating System Concepts}

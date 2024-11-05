@@ -1,4 +1,4 @@
-# 동기 처리
+# 동기 프로그래밍
 
 ## Race condition
 

@@ -82,10 +82,13 @@
 
 * [[mysql]]{MySQL}
 * [[redis]]{Redis}
-* [[designing-data-intensive-applications]]{데이터 중심 애플리케이션 설계}
-* [[database-system-concepts]]{Database System Concepts}
 * [[apache-kafka]]{아파치 카프카}
 * [[entity-relationship-model]]{Entity-Relationship 모델}
 * [[relational-data-model]]{관계형 데이터 모델}
 * [[relational-algebra]]{관계대수}
 * [[database-normalization]]{데이터베이스 정규화}
+
+## 관련문서
+
+* [[database-system-concepts]]{Database System Concepts}
+* [[designing-data-intensive-applications]]{데이터 중심 애플리케이션 설계}

@@ -1,4 +1,4 @@
 # Git
 
-* [[git-switch-and-restore]]
-* [[git-rebase-onto]]
+* [[git-switch-and-restore]]{switch & restore}
+* [[git-rebase-onto]]{rebase --onto}

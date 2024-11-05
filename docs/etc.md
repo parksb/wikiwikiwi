@@ -1,15 +1,16 @@
 # Etc.
 
-* [[amphibious-assault-ship]]
-* [[formula-one]]
-* [[fissured-ceiling-tile]]
-* [[oled-and-qled]]
-* [[entropy]]
-* [[how-to-read-a-paper]]
-* [[how-to-speak]]
-* [[ieee-citation-style]]
-* [[wikiwikiwi-citation-style]]
-* [[how-to-grow-cactus]]
-* [[oral-hygiene]]
-* [[wargame-red-dragon]]
-* [[rip-flash]]
+## 하위문서
+
+* [[amphibious-assault-ship]]{Amphibious Assault Ship}
+* [[formula-one]]{Formula 1}
+* [[fissured-ceiling-tile]]{Fissured ceiling tile}
+* [[oled-and-qled]]{OLED & QLED}
+* [[entropy]]{엔트로피}
+* [[how-to-read-a-paper]]{How to Read a Paper}
+* [[how-to-speak]]{How to speak}
+* [[ieee-citation-style]]{IEEE Citation Style}
+* [[wikiwikiwi-citation-style]]{WikiWikiWi Citation Style}
+* [[how-to-grow-cactus]]{선인장 기르는 방법}
+* [[oral-hygiene]]{구강 위생}
+* [[wargame-red-dragon]]{Wargame: Red Dragon}

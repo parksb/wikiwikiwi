@@ -1,4 +1,4 @@
-# Simple As Possible Computer
+# Simple-As-Possible 컴퓨터
 
 - Alber P. Malvino가 <Digital Computer Electronics>에서 제시한 컴퓨터 모델.
 - 단순한 SAP 컴퓨터 아키텍처를 통해 컴퓨터의 원리를 설명한다.

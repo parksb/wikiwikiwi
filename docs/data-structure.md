@@ -1,3 +1,3 @@
-# Data Structure
+# 자료구조
 
-* [[array]]
+* [[array]]{배열}

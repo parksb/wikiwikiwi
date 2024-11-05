@@ -1,4 +1,4 @@
-# Cartesian Product
+# 카테시안 곱
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Cartesian_Product_qtl1.svg/1920px-Cartesian_Product_qtl1.svg.png)
 
