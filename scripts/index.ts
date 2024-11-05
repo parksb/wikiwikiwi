@@ -83,13 +83,21 @@ interface SearchIndex {
     const linkRegex = /\[\[(.+?)\]\]/g;
     const labeledLinkRegex = /\[\[(.+?)\]\]\{(.+?)\}/g;
 
-    const findInternalFilenames = (markdown: string): string[] => {
-      return [
-        ...new Set([
-          ...markdown.match(linkRegex)?.map((link) => link.replace(/(\[\[)|(\]\])/g, '')) || [],
-          ...markdown.match(labeledLinkRegex)?.map((link) => link.replace(/(\[\[)|(\]\])|({(.+?)})/g, '')) || [],
-        ])
-      ];
+    const findSubFilenames = (markdown: string): string[] => {
+      const filenames = []
+      const subdocSection = new RegExp('## 하위문서\\s*\\n([^#]*)', 'g').exec(markdown);
+
+      if (!subdocSection) return filenames;
+
+      const lines = subdocSection[1].trim().split('\n');
+      for (const line of lines) {
+        const match = line.match(/(-|\*) \[\[(.*?)\]\]/);
+        if (match) {
+          filenames.push(match[2]);
+        }
+      }
+
+      return filenames;
     };
 
     const queue = new Denque([{ filename: 'index', breadcrumbs: [] }]);
@@ -112,7 +120,7 @@ interface SearchIndex {
       fs.writeFile(`${DIST_DIRECTORY_PATH}/${filename}.html`, ejs.render(String(TEMPLATE_FILE_PATH), { document }));
       sitemapUrls.push(`<url><loc>${WEBSITE_DOMAIN}/${filename}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
 
-      for (const internalFilename of findInternalFilenames(markdown)) {
+      for (const internalFilename of findSubFilenames(markdown)) {
         if (!writtenFiles.has(internalFilename)) {
           queue.push({ filename: internalFilename, breadcrumbs: document.breadcrumbs });
           writtenFiles.add(internalFilename);
