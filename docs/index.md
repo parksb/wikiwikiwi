@@ -11,6 +11,6 @@
 - [[graphic-design]]{시각디자인}
 - [[mathematics]]{수학}
 - [[history]]{역사학}
-- [[book]]{책}
+- [[publication]]{문헌}
 - [[memo]]{메모}
 - [[etc]]{etc.}

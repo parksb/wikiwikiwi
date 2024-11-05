@@ -4,18 +4,7 @@
 * 파이어폭스 [Servo](https://github.com/servo/servo), 구글 [Fuchsia](https://fuchsia.googlesource.com/fuchsia/), 삼성, 애플, MS, 페이스북, [AWS](https://aws.amazon.com/ko/blogs/opensource/why-aws-loves-rust-and-how-wed-like-to-help/), [Cloudflare](https://blog.cloudflare.com/tag/rust/), [Discord](https://blog.discord.com/why-discord-is-switching-from-go-to-rust-a190bbca2b1f?gi=cd596dd81c8) 등.
 * 안전성, 동시성, 실용성 측면에서 C/C++ 자리를 대체할 언어.
 
-## The Rust Programming Language
-
-* [[trpl-common-programming-concepts]]
-* [[trpl-understanding-ownership]]
-* [[trpl-using-structs-to-structure-related-data]]
-* [[trpl-managing-growing-projects-with-packages-crates-and-modules]]
-* [[trpl-common-collections]]
-* [[trpl-generic-types-traits-and-lifetimes]]
-* [[trpl-functional-language-features]]
-* [[trpl-smart-pointers]]
-
-## Notes
+## 하위문서
 
 * [[rust-ownership]]
 * [[rust-string]]
@@ -26,6 +15,10 @@
 * [[rust-module]]
 * [[rust-lifetime]]
 * [[rust-concurrency]]
+
+## 관련문서
+
+* [[the-rust-programming-language]]{The Rust Programming Language}
 
 ## 참고자료
 

@@ -26,7 +26,7 @@
   * 함수를 변수나 자료구조에 담을 수 있다.
 * lazy evaluation
 
-## Docs
+## 하위문서
 
 * [[higher-order-function]]
 * [[functional-type-system]]

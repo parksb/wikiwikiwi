@@ -6,4 +6,4 @@
 
 ## 관련문서
 
-- [[history-book]]{역사책}
+- [[history-publication]]{역사학문헌}

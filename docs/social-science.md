@@ -7,4 +7,4 @@
 
 ## 관련문서
 
-- [[social-science-book]]{사회과학책}
+- [[social-science-publication]]{사회과학문헌}

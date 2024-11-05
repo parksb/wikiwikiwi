@@ -1,4 +1,4 @@
-# 컴퓨터과학책
+# 컴퓨터과학문헌
 
 ## 하위문서
 
@@ -11,3 +11,4 @@
 * [[operating-system-concepts]]{Operating System Concepts}
 * [[computer-organization-and-design]]{Computer Organization and Design}
 * [[system-design-interview]]{가상 면접 사례로 배우는 대규모 시스템 설계 기초}
+* [[the-rust-programming-language]]{The Rust Programming Language}

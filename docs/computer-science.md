@@ -16,5 +16,5 @@
 
 ## 관련문서
 
-- [[computer-science-book]]{컴퓨터과학책}
+- [[computer-science-publication]]{컴퓨터과학문헌}
 

@@ -10,4 +10,4 @@
 
 ## 관련문서
 
-- [[mathematics-book]]{수학책}
+- [[mathematics-publication]]{수학문헌}
