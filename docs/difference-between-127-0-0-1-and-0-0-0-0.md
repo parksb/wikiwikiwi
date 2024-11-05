@@ -12,6 +12,6 @@
   * 호스트가 두 개의 아이피를 가지고 있다면, `0.0.0.0`에서 동작하는 서버는 두 아이피 모두로부터 접근 가능.
   * `app.listen('8080', '0.0.0.0')`는 어플리케이션이 모든 인터페이스로부터 요청을 받겠다는 의미.
 
-## References
+## 참고자료
 
 * https://superuser.com/questions/949428/whats-the-difference-between-127-0-0-1-and-0-0-0-0

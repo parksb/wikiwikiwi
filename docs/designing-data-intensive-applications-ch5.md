@@ -225,7 +225,7 @@
 
 * 정보가 빛의 속도보다 빠를 수 없기 때문에 이벤트간 시간차가 빛의 속도보다 짧으면 두 이벤트는 서로 영향을 미칠 수 없다.
 
-## References
+## 참고자료
 
 * [오길원, "MariaDB Binlog을 이용한 변경사항 추적", 리디주식회사, 2017.](https://ridicorp.com/story/binlog-collector/)
 * [Evan Wallace, "How Figma's multiplayer technology works", Figma, 2019](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)

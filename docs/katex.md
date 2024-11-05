@@ -64,6 +64,6 @@ $$
 \end{aligned}
 $$
 
-## References
+## 참고자료
 
 * ["KaTeX", katex.org.](https://katex.org/)

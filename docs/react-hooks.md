@@ -75,7 +75,7 @@ useEffect(() => {
 
 * custom hooks도 많다: [github.com/rehooks/awesome-react-hooks](https://github.com/rehooks/awesome-react-hooks)
 
-## References
+## 참고자료
 
 * ["Hook의 개요", React.](https://ko.reactjs.org/docs/hooks-intro.html)
 * [velopert, "리액트의 Hooks 완벽 정복하기", velog, 2018.](https://velog.io/@velopert/react-hooks)

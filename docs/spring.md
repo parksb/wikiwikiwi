@@ -132,7 +132,7 @@ class Client {
 * 핵심 관심사와 부가 관심사를 분리해 모듈화하는 방법론.
 * 스프링의 기반 철학은 AOP. 많은 low-level API를 제공한다.
 
-## References
+## 참고자료
 
 * [Spring Framework Documentation Version 5.3.3](https://docs.spring.io/spring-framework/docs/5.3.3/reference/html/)
 * [Martin Fowler, "Inversion of Control Containers and the Dependency Injection pattern", 2004.](https://martinfowler.com/articles/injection.html)

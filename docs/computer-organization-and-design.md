@@ -158,7 +158,7 @@
 * **Data hazard:** 이전 instruction이 끝날 때까지 기다려야 하는 경우.
   * forwarding을 통해 해결할 수 있다.
   * ALU를 지난 즉시 값을 내려보낸다.
-    ![](https://user-images.githubusercontent.com/6410412/103223453-9c715980-4969-11eb-9906-3336c17f2f8e.png) 
+    ![](https://user-images.githubusercontent.com/6410412/103223453-9c715980-4969-11eb-9906-3336c17f2f8e.png)
   * branch instruction의 경우 앞단계의 결과를 기다려야 해서 stalled될 수 있음.
 * **Control hazard:** 이전 instruction에 따라 control action을 결정해야 하는 경우.
   * branch instruction을 해석하는 동안 하위 instruction들도 병렬적으로 처리되어 버림.
@@ -304,6 +304,6 @@
 * 다른 프로세서가 데이터를 수정하면 invalid
 * private cache에서 데이터를 수정한 상태라면 modified
 
-### Referecnes
+## 참고자료
 
 * [아주대학교, 컴퓨터구조, 2018.](https://github.com/parksb/campus-life/tree/master/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B5%AC%EC%A1%B0)

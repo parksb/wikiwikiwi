@@ -53,6 +53,6 @@
     * 트랙의 표면이 미끄럽거나 트랙에 파편이 있음.
     * 해당 구역 차량은 반드시 서행.
 
-## References
+## 참고자료
 
 * ["포뮬러 원 규정", ko.wikipedia.org](https://ko.wikipedia.org/wiki/%ED%8F%AC%EB%AE%AC%EB%9F%AC_%EC%9B%90_%EA%B7%9C%EC%A0%95)

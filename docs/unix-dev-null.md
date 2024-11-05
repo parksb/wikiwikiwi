@@ -45,6 +45,6 @@ cd: no such file or directory: invalid-path
   * 표준 입력은 `/dev/null`로 버러진다.
   * 표준 에러(`2`)를 표준 출력(`1`)으로 리다이렉션했기 때문에 마찬가지로 버려진다.
 
-## References
+## 참고자료
 
 * ["Discarding output with the /dev/null file", IBM Knowledge Center.](https://www.ibm.com/support/knowledgecenter/ko/ssw_aix_71/osmanagement/discard_output_devnull.html)

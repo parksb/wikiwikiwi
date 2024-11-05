@@ -30,7 +30,7 @@
 
 * 우주 전체의 엔트로피가 계속 증가하면, 언젠가는 결국 엔트로피가 최대가 된 상태(열죽음)이 된다. 사용할 수 있는 자유 에너지가 없는 상태이므로 열역학적 종말을 맞게된다. 
 
-## References
+## 참고자료
 
 * [오현석, "Entropy", AI Study.](http://www.aistudy.co.kr/physics/entropy.htm)
 * [이종필, "열역학과 엔트로피", 동아사이언스, 2020.](http://dongascience.donga.com/news.php?idx=37725).

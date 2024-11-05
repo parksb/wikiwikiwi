@@ -96,7 +96,7 @@
 * 원근법(Perspective)는 3차원 사물을 2차원 평면에 표현할 때 사용된다.
 * 원근법을 통해 공간감을 형성하고, 역동적인 디자인을 할 수 있다.
 
-## References
+## 참고자료
 
 * 한국디자인학회, _기초 디자인 교과서_, 안그라픽스, 2017.
 * [아주대학교, "DGMD151 그래픽디자인", 2018.](https://github.com/ParkSB/ajou-campus-life/tree/master/DGMD151_Graphic-Design)

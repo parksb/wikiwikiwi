@@ -33,7 +33,7 @@ error[E0515]: cannot return reference to temporary value
 
 * 함수 내에서 만든 임시 값의 참조를 반환하는 것은 불가능하다.
 
-## References
+## 참고자료
 
 * ["References and Borrowing", The Rust Programming Language.](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
 * ["Is there any way to return a reference to a variable created in a function?", Stack Overflow, 2015.](https://stackoverflow.com/questions/32682876/is-there-any-way-to-return-a-reference-to-a-variable-created-in-a-function)

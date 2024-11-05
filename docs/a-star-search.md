@@ -94,7 +94,7 @@ $$\hat f(x) = \hat g(x) + \hat h(x)$$
 - 최악의 경우 $O(b^d)$. $d$는 해까지의 최단 거리, $b$는 트리의 평균 분기율.
 - $|h(x) - \hat h(x)| \leq \log \hat h(x)$이면 $O(d)$.
 
-## References
+## 참고자료
 
 - https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/PublishedPapers/astar.pdf
 - https://www.redblobgames.com/pathfinding/a-star/introduction.html

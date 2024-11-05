@@ -21,7 +21,7 @@
 * 파이썬도 mypy 같은 정적 타입 체커가 있음.
 * 루비에 이어 얼랭도 정적 타입 지원을 시작함.
 
-## References
+## 참고자료
 
 * [Jukka Lehtosalo, "4백만 줄의 파이썬 타이핑을 위한 여정", 최경재 역, 2019.](https://ryanking13.github.io/2019/10/03/our-journey-to-type-checking-4-million-lines-of-python.html)
 * [강성훈, "<마비노기 듀얼> 서버, 동적 타입 언어에서 반 정적 타입 언어로의 변신", NDC, 2016.](http://cosmic.mearie.org/2016/04/kailua/ndc2016-slides.pdf)

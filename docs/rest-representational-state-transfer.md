@@ -56,7 +56,7 @@
 * 아키텍처 스타일은 요소들의 역할과 기능을 제한하는 제약 집합으로 이뤄진다. 
 * 서로 다른 시스템의 아키텍처를 직접 비교하는 것은 어려운 일인데, 스타일은 아키텍처의 일반적인 성격을 정의하고 분류하는 매커니즘이다.
 
-## References
+## 참고자료
 
 * [김동범, "REST API 제대로 알고 사용하기", TOAST Meetup, 2016.](https://meetup.toast.com/posts/92)
 * [이응준, "그런 REST API로 괜찮은가," in _10th DEVIEW_, Nov. 2017.](https://tv.naver.com/v/2292653)

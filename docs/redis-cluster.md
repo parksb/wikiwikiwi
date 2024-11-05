@@ -14,7 +14,7 @@
     - 이러헥 하면 해당 `group`에 대한 MGET, MSET을 사용할 수 있음.
     - 단, 해시 태그를 남용하면 레디스 클러스터의 장점인 가용성을 잃게 됨.
 
-## Reference
+## 참고자료
 
 - [Scale with Redis Cluster](https://redis.io/docs/management/scaling/)
 - [Redis Cluster Specification](https://redis.io/docs/reference/cluster-spec/)

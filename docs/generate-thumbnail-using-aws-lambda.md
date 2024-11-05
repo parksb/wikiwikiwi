@@ -27,7 +27,7 @@
 * S3에 불필요한 이미지를 업로드하지 않으니까 비용 절감 효과가 있다.
 * 히트율이 높으면 그다지 메리트는 없을 것 같다.
 
-## References
+## 참고자료
 
 * [Jaiganesh Girinathan, "Resizing Images with Amazon CloudFront & Lambda@Edge", AWS CDN Blog, 2018.](https://aws.amazon.com/ko/blogs/networking-and-content-delivery/resizing-images-with-amazon-cloudfront-lambdaedge-aws-cdn-blog/)
 * [seapy, "AWS Lambda를 이용한 이미지 썸네일 생성 개발 후기", 당근마켓 팀블로그, 2016.](https://medium.com/daangn/aws-lambda%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%8D%B8%EB%84%A4%EC%9D%BC-%EC%83%9D%EC%84%B1-%EA%B0%9C%EB%B0%9C-%ED%9B%84%EA%B8%B0-acc278d49980)

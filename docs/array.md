@@ -30,7 +30,7 @@ A        A + 1    A + 2          A + 8
   * 임의 접근이 불가능.
 * 삽입, 삭제, 병합이 효율적이다.
 
-## References
+## 참고자료
 
 * [The Rust Programming Language, "Data Types".](https://doc.rust-lang.org/book/ch03-02-data-types.html?highlight=array#the-array-type)
 * [Jonathan M. Davis, "vector vs. list in STL", Stack Overflow, 2010.](https://stackoverflow.com/a/2209564/8463154)

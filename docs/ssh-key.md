@@ -25,6 +25,6 @@
   $ ssh-keygen -y -f ~/.ssh/id_rsa # `-y` 옵션을 주면 private 키로부터 public 키를 다시 생성한다.
   ```
 
-## References
+## 참고자료
 
 * [GitHub, Inc., "Connecting to GitHub with SSH", help.gihtub.com.](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)

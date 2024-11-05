@@ -92,4 +92,4 @@
   }
   ```
   * 이렇게 하면 `change` 함수 내에서 `some_string`을 변경할 때 caller의 `s`도 변경된다.
-  
+

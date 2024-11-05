@@ -227,6 +227,6 @@
 * 과거에는 황금비율이 유행했지만 산업혁명 이후에는 root 2 rectangle 비율이 사용된다. A4, 모니터가 예시. 공간보다는 평면 디자인에 주로 사용됨.
 * root ratio는 사실 황금비율과 비율이 비슷함. 대량 생산에 용이, 자투리 없이 제품을 만들어낼 수 있는 경제적인 비례다.
 
-## References
+## 참고자료
 
 * [아주대학교, 비주얼커뮤니케이션디자인, 2018.](https://github.com/parksb/campus-life/tree/master/%EB%B9%84%EC%A3%BC%EC%96%BC%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98%EB%94%94%EC%9E%90%EC%9D%B8)

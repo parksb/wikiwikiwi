@@ -17,7 +17,7 @@ npm run dev
 * 사실 웹팩쓰는 템플릿도 있다: [github.com/sveltejs/template-webpack](https://github.com/sveltejs/template-webpack)
 * 직접 써서 spa를 만들어봤다: [github.com/ParkSB/wikiwikiwi-develop](https://github.com/ParkSB/wikiwikiwi-develop)
 
-## References
+## 참고자료
 
 * [Svelte, svelte.dev.](https://svelte.dev/)
 * [ashnamuh, "웹 프레임워크 Svelte를 소개합니다", velog, 2019.](https://velog.io/@ashnamuh/웹-프레임워크-Svelte를-소개합니다.-uejz0yuff5)

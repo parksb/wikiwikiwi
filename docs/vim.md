@@ -3,7 +3,7 @@
 ## Moving the cursor
 
 * `h`, `j`, `k`, `l` - 좌, 하, 상, 우 이동
-* `H` (High) - 화면 최상단으로 이동 
+* `H` (High) - 화면 최상단으로 이동
 * `M` (Middel) - 화면 중간으로 이동
 * `L` (Low) - 화면 최하단으로 이동
 * `w`, `W` (Word) - 다음 단어 시작으로 이동, 특수문자 포함
@@ -70,7 +70,7 @@
 * `:%s/old/new/g` - 문서 전체의 모든 `old` 문자열을 `new`로 치환
 
 
-## References
+## 참고자료
 
 * ["VIM Tutor Version 1.7", GitHub, 2019.](https://github.com/vim/vim/blob/4c92e75dd4ddb68dd92a86dd02d53c70dd4af33a/runtime/tutor/tutor)
 * [Richard, "Vim Cheat Sheet", rtorr.com.](https://vim.rtorr.com/)

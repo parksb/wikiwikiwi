@@ -78,7 +78,7 @@ function unit<T>(value: T): M<T> { ... }
 function bind<T, U>(instance: M<T>, transform: (value: T) => M<U>): M<U> { ... }
 ```
 
-## References
+## 참고자료
 
 * [liam.m, "Monad Programming with Scala Future", kakao Tech, 2016.](https://tech.kakao.com/2016/03/03/monad-programming-with-scala-future/)
 * [안도형, "자바스크립트로 함수형 프로그래밍 아주 살짝 맛보기", rinae's devlog, 2018.](https://rinae.dev/posts/functional-js-tutorial)

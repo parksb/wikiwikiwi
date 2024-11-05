@@ -39,7 +39,7 @@ $ git reset <file>
 $ git restore --staged <file>
 ```
 
-## References
+## 참고자료
 
 * ["git-switch", git-scm, 2019.](https://git-scm.com/docs/git-switch)
 * ["git-restore", git-scm, 2019.](https://git-scm.com/docs/git-restore)

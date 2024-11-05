@@ -139,12 +139,12 @@ redis> scan 17
    9) "key:11"
 ```
 
-## 같이 보기
+## 하위문서
 
-* [[redis-cluster]]
-* [[redis-pub-sub]]
+* [[redis-cluster]]{Redis 클러스터}
+* [[redis-pub-sub]]{Redis Pub/Sub}
 
-## References
+## 참고자료
 
 * [Redis Labs, “Commands”, redis.io.](https://redis.io/commands)
 * [Clark Kang, "Redis의 SCAN은 어떻게 동작하는가?", kakao Tech, 2016.](https://tech.kakao.com/2016/03/11/redis-scan/)

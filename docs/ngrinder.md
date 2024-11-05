@@ -137,7 +137,7 @@ CF와 다르게 에러 발생 시점부터 응답이 돌아오지 않고 타임�
 * 알고보니 CloudFront는 기본 초당 100,000건 제한이 있었다.[^amazon]
 * cf에 캐시된 이후에는 tps가 높아졌다. 이정도면 서비스하는데 문제가 없을 것이라고 판단했다.
 
-## References
+## 참고자료
 
 * [ngrinder, naver.github.io.](https://naver.github.io/ngrinder/)
 * [nesoy, "nGrinder 시작하기", Nesoy Blog, 2018.](https://nesoy.github.io/articles/2018-10/nGrinder-Start)

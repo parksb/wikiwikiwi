@@ -57,11 +57,11 @@
   - 레플리카 중 하나가 리더로 선출되면 모든 읽기, 쓰기 요청을 처리한다.
   - 팔로워는 리더의 파티션을 복제해두며, 리더에 문제가 생기면 ISR(In-sync Replicas) 중 하나가 리더로 선출.
 
-## 같이 보기
+## 관련문서
 
-- [[redis-pub-sub]]
+- [[redis-pub-sub]]{Redis Pub/Sub}
 
-## References
+## 참고자료
 
 - https://kafka.apache.org/
 - [Kafka: a Distributed Messaging System for Log Processing](https://notes.stephenholiday.com/Kafka.pdf)

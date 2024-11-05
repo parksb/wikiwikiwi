@@ -167,6 +167,6 @@ ps [-AaCcEefhjlMmrSTvwXx] [-O fmt | -o fmt] [-G gid[,gid...]] [-g grp[,grp...]] 
 ps [-L]
 ```
 
-## References
+## 참고자료
 
 * [Julia Evans, "Bite size command line", gumroad.com, 2018.](https://gumroad.com/discover?query=bite%20size%20command#EJRth)

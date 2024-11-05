@@ -94,7 +94,7 @@
     S->>C: 응답
   ```
 
-## References
+## 참고자료
 
 * https://jwt.io/introduction
 * https://datatracker.ietf.org/doc/html/rfc7519

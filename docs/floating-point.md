@@ -55,7 +55,7 @@ $$
 * 따라서 실제 값과 오차가 발생한다. 실수는 동등 연산(`==`)으로 비교하면 안된다.
 * `round()` 등의 함수로 미리 소수를 가공한 뒤 연산하자.
 
-## References
+## 참고자료
 
 * [[computer-organization-and-design]]
 * [Floating Point Math.](https://0.30000000000000004.com/)

@@ -14,7 +14,7 @@
 * 이렇게 된다:
   ![ast](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Abstract_syntax_tree_for_Euclidean_algorithm.svg/800px-Abstract_syntax_tree_for_Euclidean_algorithm.svg.png)
 
-## References
+## 참고자료
 
 * ["Abstract syntax tree", Wikipedia](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
 * [AST Explorer](https://www.etoday.co.kr/news/view/1728667)

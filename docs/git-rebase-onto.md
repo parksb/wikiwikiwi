@@ -23,7 +23,7 @@ $ git rebase --onto master server client
 $ git rebase --onto master 39a527 8772ea
 ```
 
-## References
+## 참고자료
 
 * ["Git Branching - Rebasing", git-scm.](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 * [Xmanoux, "I can't understand the behaviour of git rebase --onto", 2015.](https://stackoverflow.com/questions/29914052/i-cant-understand-the-behaviour-of-git-rebase-onto)

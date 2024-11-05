@@ -149,6 +149,6 @@
 * 엇갈리기: 개성있고 독특한 디자인을 가능하게 한다.
 * 런어라운드 & 컨투어: 디자이너가 본문 모양을 특정 용도에 맞게 제작.
 
-## References
+## 참고자료
 
 * [아주대학교, 디지털타이포그라피, 2018.](https://github.com/parksb/campus-life/tree/master/%EB%94%94%EC%A7%80%ED%84%B8%ED%83%80%EC%9D%B4%ED%8F%AC%EA%B7%B8%EB%9D%BC%ED%94%BC)

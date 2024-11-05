@@ -22,6 +22,6 @@ macro_rules! vec {
 
 * `#[macro_export]` 표기는 매크로를 어디에서나 사용할 수 있다는 의미.
 
-## References
+## 참고자료
 
 * [Daniel Keep, "The Little Book of Rust Macros", danielkeep.github.io.](https://danielkeep.github.io/tlborm/book/)

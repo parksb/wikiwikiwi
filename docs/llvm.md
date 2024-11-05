@@ -11,7 +11,7 @@
 * 전통적인 설계의 문제는 하나의 컴파일러가 여러 아키텍처 또는 언어를 지원하지 못한다는 것이다.
 * LLVM은 전통적인 설계의 문제를 해결한다.
   ![Retargetablity](https://aosabook.org/images/llvm/RetargetableCompiler.png)
-* 위와 같이 retargetable하게 설계하면 기존 옵티마이저와 백엔드를 그대로 둔 채로 새로운 프론트엔드만을 추가해 새 언어를 지원할 수 있다. 
+* 위와 같이 retargetable하게 설계하면 기존 옵티마이저와 백엔드를 그대로 둔 채로 새로운 프론트엔드만을 추가해 새 언어를 지원할 수 있다.
 
 ## Existing Language Implementations
 
@@ -24,6 +24,6 @@
   * 가장 해결하기 어려운 문제: 초기 설계 문제와 시대에서 비롯된 고유한 구조적 문제.
   * 레이어링 문제와 추상화로 인한 고통: 백엔드가 프론트엔드 AST를 참조해 디버그 정보를 생성한다.
 
-## References
+## 참고자료
 
 * [Chris Lattner, "LLVM," in _The Architecture of Open Source Applications_, 2011.](https://aosabook.org/en/llvm.html)

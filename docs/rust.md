@@ -27,7 +27,7 @@
 * [[rust-lifetime]]
 * [[rust-concurrency]]
 
-## References
+## 참고자료
 
 * [Rust Team, "The Rust Programming Language", doc.rust-lang.org.](https://doc.rust-lang.org/book/)
 * [Dumindu Madunuwan, "Learning Rust", learning-rust.github.io.](https://learning-rust.github.io/docs/)

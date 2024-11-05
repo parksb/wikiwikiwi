@@ -6,10 +6,10 @@
   - 특정 채널에 메시지를 발행: `PUBLISH <channel> <message>`
 - 메시지가 수신됐는지 확인하지 않기 때문에 메시지 손실이 발생할 수 있음.
 
-## 같이 읽기
+## 관련문서
 
-- [[apache-kafka]]
+- [[apache-kafka]]{아파치 카프카}
 
-## References
+## 참고자료
 
 - [Redis Pub/Sub](https://redis.io/docs/interact/pubsub/)

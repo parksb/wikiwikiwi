@@ -96,7 +96,7 @@
 
 * G. Sussman, "Home Page-Dr. Gerald Sussman," July, 2002. [Online]. Available: http://www.comm.edu.faculty/sussman/sussmanpage.htm. [Accessed Nov. 14, 2007].
 
-## References
+## 참고자료
 
 * [IEEE Reference Guide](https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf)
 * [IEEE Citation Guidelines](https://ieee-dataport.org/sites/default/files/analysis/27/IEEE%20Citation%20Guidelines.pdf)

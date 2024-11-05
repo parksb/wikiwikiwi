@@ -68,7 +68,7 @@ $ omf install z
   $ set PATH (string match -v /usr/local/bin $PATH)
   ```
 
-## References
+## 참고자료
 
 * [fish-shell documentation](https://fishshell.com/docs/current/index.html)
 

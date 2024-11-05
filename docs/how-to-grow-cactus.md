@@ -9,7 +9,7 @@
   * 성장기(봄, 가을)에는 충분히 물을 준다.
   * 휴면기(여름, 겨울)에는 적시는 정도로 물을 준다.
 
-## References
+## 참고자료
 
 * ["용신목 키우기, 소개, 관리, 번식방법", 홈가든넷.](https://hgarden.net/portfolio/blue-candle/)
 * ["실내에서 선인장 기르는 방법", wikiHow.](https://ko.wikihow.com/%EC%8B%A4%EB%82%B4%EC%97%90%EC%84%9C-%EC%84%A0%EC%9D%B8%EC%9E%A5-%EA%B8%B0%EB%A5%B4%EB%8A%94-%EB%B0%A9%EB%B2%95)

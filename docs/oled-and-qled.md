@@ -29,7 +29,7 @@
 * OLED가 유기물질 발광체를 이용한다면 QLED는 무기물질인 양자점 발광체를 이용한다.
 * 퀀텀닷은 물질 종류의 변화없이도 입자 크기별로 다른 색을 낼 수 있다.
 
-## References
+## 참고자료
 
 * [삼성디스플레이 뉴스룸, "OLED의 종류에 대하여 알아봅시다^^", 2010.](http://news.samsungdisplay.com/8844)
 * [Jim Martin, "QLED와 OLED, 어떤 것이 더 좋을까", ITWorld, 2018.](http://www.itworld.co.kr/news/107928)

@@ -157,7 +157,7 @@
   1. promise는 생성 즉시 스케줄된다. 반면, futures는 `await`됐을 때만 스케줄된다.
   2. 모든 promies는 fallible하다. 반면, futures는 infallible할 수 있다.
 
-## References
+## 참고자료
 
 - https://rust-lang.github.io/async-book/
 - https://doc.rust-lang.org/book/ch16-00-concurrency.html

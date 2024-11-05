@@ -33,7 +33,7 @@
 * [[wrd-deck-blue-dragon]]
 * [[wrd-deck-eastern-bloc]]
 
-## References
+## 참고자료
 
 * https://dev.dannymcgee.net/wargame/
 * [NotMegatron, "Wargame Repository", reddit.com/r/wargame, 2021.](https://www.reddit.com/r/wargame/comments/ngt60q/wargame_repository/)

@@ -456,6 +456,6 @@
 
 * 4개의 address를 담고 있음. (dest, source, AP)
 
-## References
+## 참고자료
 
 * [아주대학교, 컴퓨터네트워크, 2018.](https://github.com/parksb/campus-life/tree/master/%EC%BB%B4%ED%93%A8%ED%84%B0%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
