@@ -1,4 +1,4 @@
-# Wikiwikiwi
+# 🥝Wikiwikiwi
 
 ## 개요
 
