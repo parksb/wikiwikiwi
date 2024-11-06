@@ -22,8 +22,11 @@ interface Document {
   title: string;
   filename: string; // without extension
   html: string;
+  markdown: string;
   breadcrumbs: string[]; // without extension
   children: Document[];
+  parent?: Document;
+  referredFrom: Document[];
 }
 
 interface SearchIndex {
@@ -100,8 +103,18 @@ interface SearchIndex {
       return filenames;
     };
 
+    const findReferredFilenames = (markdown: string): string[] => {
+      return [
+        ...new Set([
+          ...markdown.match(linkRegex)?.map((link) => link.replace(/(\[\[)|(\]\])/g, '')) || [],
+          ...markdown.match(labeledLinkRegex)?.map((link) => link.replace(/(\[\[)|(\]\])|({(.+?)})/g, '')) || [],
+        ]),
+      ];
+    };
+
     const queue = new Denque([{ filename: 'index', breadcrumbs: [] }]);
     const writtenFiles: Set<string> = new Set(['index']);
+    const documents: { [key: string]: Document } = {};
 
     while (queue.length > 0) {
       const { filename, breadcrumbs } = queue.shift();
@@ -112,13 +125,9 @@ interface SearchIndex {
         .replace(labeledLinkRegex, '<a href="./$1.html">$2</a>')
         .replace(linkRegex, '<a href="./$1.html">$1</a>');
       const title = markdown.match(/^#\s.*/)[0].replace(/^#\s/, '');
-      const document: Document = { title, filename, html, breadcrumbs: [...breadcrumbs, { title, filename }], children: [] };
 
-      const searchIndex: SearchIndex = { title: document.title, filename, text: markdown };
-      searchIndices.push(searchIndex);
-
-      fs.writeFile(`${DIST_DIRECTORY_PATH}/${filename}.html`, ejs.render(String(TEMPLATE_FILE_PATH), { document }));
-      sitemapUrls.push(`<url><loc>${WEBSITE_DOMAIN}/${filename}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
+      const document: Document = { title, filename, markdown, html, breadcrumbs: [...breadcrumbs, { title, filename }], children: [], referredFrom: [] };
+      documents[filename] = document;
 
       for (const internalFilename of findSubFilenames(markdown)) {
         if (!writtenFiles.has(internalFilename)) {
@@ -126,6 +135,23 @@ interface SearchIndex {
           writtenFiles.add(internalFilename);
         }
       }
+    }
+
+    for (const document of Object.values(documents)) {
+      for (const referredFilename of findReferredFilenames(document.markdown)) {
+        if (referredFilename in documents) {
+          documents[referredFilename].referredFrom.push(document);
+        }
+      }
+    }
+
+    for (const document of Object.values(documents)) {
+      const { title, filename, markdown } = document;
+      const searchIndex: SearchIndex = { title, filename, text: markdown };
+      searchIndices.push(searchIndex);
+
+      fs.writeFile(`${DIST_DIRECTORY_PATH}/${filename}.html`, ejs.render(String(TEMPLATE_FILE_PATH), { document }));
+      sitemapUrls.push(`<url><loc>${WEBSITE_DOMAIN}/${filename}.html</loc><changefreq>daily</changefreq><priority>1.00</priority></url>`);
     }
 
     fs.writeFile(`${DIST_DIRECTORY_PATH}/search.html`, ejs.render(String(SEARCH_TEMPLATE_FILE_PATH), { document: JSON.stringify(searchIndices) }));
