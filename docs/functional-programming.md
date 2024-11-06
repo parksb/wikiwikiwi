@@ -28,12 +28,12 @@
 
 ## 하위문서
 
-* [[higher-order-function]]
-* [[functional-type-system]]
-* [[functor]]
-* [[applicative-functor]]
-* [[monoid]]
-* [[monad]]
+* [[higher-order-function]]{고차 함수}
+* [[functional-type-system]]{함수형 타입 시스템}
+* [[functor]]{펑터}
+* [[applicative-functor]]{애플리케이티브 펑터}
+* [[monoid]]{모노이드}
+* [[monad]]{모나드}
 
 ## 참고자료
 
