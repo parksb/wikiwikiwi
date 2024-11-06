@@ -13,8 +13,9 @@ import * as mdTableOfContents from 'markdown-it-table-of-contents';
 import * as mdInlineComment from 'markdown-it-inline-comments';
 import * as mdCheckbox from 'markdown-it-task-checkbox';
 import * as mdEmoji from 'markdown-it-emoji';
-import mdMermaid from 'markdown-it-mermaid';
 import * as mdExternalLink from 'markdown-it-external-links';
+import mdMermaid from 'markdown-it-mermaid';
+import * as mdContainer from 'markdown-it-container';
 
 const Denque = require('denque');
 
@@ -73,6 +74,21 @@ interface SearchIndex {
     })
     .use(mdCheckbox, {
       disabled: true,
+    })
+    .use(mdContainer, 'TOGGLE', {
+      validate(params: string) {
+        return params.trim().match(/^TOGGLE\s+(.*)$/);
+      },
+      render(tokens: unknown, idx: number) {
+        const content = tokens[idx].info.trim().match(/^TOGGLE\s+(.*)$/);
+        if (tokens[idx].nesting === 1) {
+          return `<details><summary>${md.utils.escapeHtml(content[1])}</summary>\n`;
+        }
+        return '</details>\n';
+      },
+    })
+    .use(mdContainer, 'NOTE', {
+      validate: () => true,
     })
     .use(mdExternalLink, {
       externalClassName: 'external',
