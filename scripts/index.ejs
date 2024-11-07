@@ -32,12 +32,15 @@
 <body>
   <header role="navigation">
     <small>
-      <% document.breadcrumbs.map((breadcrumb) => { %>
-        <a href="<%- breadcrumb.filename %>.html"><%- breadcrumb.title %></a>
-        <span> ＞ </span>
-      <% }) %>
-      ― <a href="https://github.com/parksb/wikiwikiwi/commits/master/docs/<%- document.filename %>.md">history</a> ·
-      <a href="https://raw.githubusercontent.com/parksb/wikiwikiwi/master/docs/<%- document.filename %>.md">raw</a>
+      <ul>
+        <% document.breadcrumbs.map((breadcrumb) => { %>
+          <li><a href="<%- breadcrumb.filename %>.html"><%- breadcrumb.title %></a></li>
+        <% }) %>
+      </ul>
+      <span class="meta">
+        <a href="https://github.com/parksb/wikiwikiwi/commits/master/docs/<%- document.filename %>.md">history</a> ·
+        <a href="https://raw.githubusercontent.com/parksb/wikiwikiwi/master/docs/<%- document.filename %>.md">raw</a>
+      </span>
     </small>
     <form id="search-form" method="get" action="search.html">
       <input id="search-text-field" type="search" name="q" />
@@ -48,12 +51,14 @@
   <main>
     <article><%- document.html %></article>
     <% if (document.referredFrom.length > 0) { %>
-      <section id="backlinks">
+      <section class="backlinks">
         <small>
           Backlinks:
-          <% document.referredFrom.map((document) => { %>
-            <a href="<%- document.filename %>.html"><%- document.title %></a>
-          <% }) %>
+          <ul>
+            <% document.referredFrom.map((document) => { %>
+              <li><a href="<%- document.filename %>.html"><%- document.title %></a></li>
+            <% }) %>
+          </ul>
         </small>
       </section>
     <% } %>
